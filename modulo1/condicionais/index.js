@@ -27,7 +27,7 @@
 
 // exercício de escrita de código 01
 
-/*
+
 let idade = Number(prompt("Digite sua idade: "))
 console.log(idade)
 
@@ -93,7 +93,7 @@ if (generoFilmeDesafio === "fantasia" && precoIngressoDesafio < 15) {
     console.log("Escolha outro filme :(")
 
 }
-*/
+
 // Desafio 02
 
 let nomeCompleto = prompt("Digite seu nome completo: ")
