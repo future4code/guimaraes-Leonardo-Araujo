@@ -10,7 +10,11 @@ function retornaTamanhoArray(array) {
 
 // EXERCÍCIO 02
 function retornaArrayInvertido(array) {
-  return array.reverse()
+    let arrayInvertido=[]
+    for(let i=array.length-1;i>=0;i--){
+        arrayInvertido.push(array[i])
+    }
+    return arrayInvertido
 }
 
 // EXERCÍCIO 03
@@ -22,7 +26,13 @@ function retornaArrayOrdenado(array) {
 
 // EXERCÍCIO 04
 function retornaNumerosPares(array) {
-  
+    let arrayDePares=[]
+    for(let elemento of array){
+        if(elemento%2===0){
+            arrayDePares.push(elemento)
+        }
+    }
+  return arrayDePares
 }
 
 // EXERCÍCIO 05
