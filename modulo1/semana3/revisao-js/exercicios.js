@@ -121,29 +121,37 @@ function retornaSegundoMaiorESegundoMenor(array) {
 
 // EXERCÍCIO 11
 function retornaChamadaDeFilme(filme) {
-    filme.atores=['Meryl Streep', ' Anne Hathaway', ' Emily Blunt', ' Stanley Tucci']
+    filme.atores = ['Meryl Streep', ' Anne Hathaway', ' Emily Blunt', ' Stanley Tucci']
     return `Venha assistir ao filme ${filme.nome}, de ${filme.ano}, dirigido por ${filme.diretor} e estrelado por ${filme.atores}.`
 }
 
 // EXERCÍCIO 12
 function retornaPessoaAnonimizada(pessoa) {
-    let novaPessoa= {...pessoa,nome:"ANÔNIMO"}
+    let novaPessoa = {
+        ...pessoa,
+        nome: "ANÔNIMO"
+    }
     return novaPessoa
 }
 
 // EXERCÍCIO 13A
 function retornaPessoasAutorizadas(pessoas) {
-    let pessoasAutorizadas=pessoas.filter((item,index)=>{
-        
-        return (item.altura>1.5 && item.idade>14 &&item.idade<60)
-    
-})
-    
+    let pessoasAutorizadas = pessoas.filter((item) => {
+
+        return (item.altura > 1.5 && item.idade > 14 && item.idade < 60)
+
+    })
     return pessoasAutorizadas
 }
 
 // EXERCÍCIO 13B
 function retornaPessoasNaoAutorizadas(pessoas) {
+    let pessoasNaoAutorizadas = pessoas.filter((item) => {
+
+        return (item.altura < 1.5 || item.idade <= 14 || item.idade > 60)
+
+    })
+    return pessoasNaoAutorizadas
 
 }
 
