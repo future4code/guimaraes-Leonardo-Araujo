@@ -112,7 +112,7 @@ function retornaSegundoMaiorESegundoMenor(array) {
         arrayInicial.splice(arrayInicial.indexOf(menorNumero), 1)
         maiorNumero = Math.max(...arrayInicial)
         menorNumero = Math.min(...arrayInicial)
-    }else{
+    } else {
         maiorNumero = Math.min(...arrayInicial)
         menorNumero = Math.max(...arrayInicial)
     }
@@ -121,7 +121,8 @@ function retornaSegundoMaiorESegundoMenor(array) {
 
 // EXERCÍCIO 11
 function retornaChamadaDeFilme(filme) {
-
+    filme.atores=['Meryl Streep', ' Anne Hathaway', ' Emily Blunt', ' Stanley Tucci']
+    return `Venha assistir ao filme ${filme.nome}, de ${filme.ano}, dirigido por ${filme.diretor} e estrelado por ${filme.atores}.`
 }
 
 // EXERCÍCIO 12
