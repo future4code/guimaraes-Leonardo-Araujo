@@ -133,7 +133,13 @@ function retornaPessoaAnonimizada(pessoa) {
 
 // EXERCÍCIO 13A
 function retornaPessoasAutorizadas(pessoas) {
-
+    let pessoasAutorizadas=pessoas.filter((item,index)=>{
+        
+        return (item.altura>1.5 && item.idade>14 &&item.idade<60)
+    
+})
+    
+    return pessoasAutorizadas
 }
 
 // EXERCÍCIO 13B
