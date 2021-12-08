@@ -5,13 +5,13 @@
 
 // EXERCÍCIO 01
 function retornaTamanhoArray(array) {
-   return array.length
+    return array.length
 }
 
 // EXERCÍCIO 02
 function retornaArrayInvertido(array) {
-    let arrayInvertido=[]
-    for(let i=array.length-1;i>=0;i--){
+    let arrayInvertido = []
+    for (let i = array.length - 1; i >= 0; i--) {
         arrayInvertido.push(array[i])
     }
     return arrayInvertido
@@ -19,69 +19,77 @@ function retornaArrayInvertido(array) {
 
 // EXERCÍCIO 03
 function retornaArrayOrdenado(array) {
-  return array.sort( (a, b)=>{
-    return a - b
-  })
+    return array.sort((a, b) => {
+        return a - b
+    })
 }
 
 // EXERCÍCIO 04
 function retornaNumerosPares(array) {
-    let arrayDePares=[]
-    for(let elemento of array){
-        if(elemento%2===0){
+    let arrayDePares = []
+    for (let elemento of array) {
+        if (elemento % 2 === 0) {
             arrayDePares.push(elemento)
         }
     }
-  return arrayDePares
+    return arrayDePares
 }
 
 // EXERCÍCIO 05
 function retornaNumerosParesElevadosADois(array) {
-    let arrayParesAoQuadrado=[]
-   for(let elemento of array){
-       if (elemento%2===0){
-           arrayParesAoQuadrado.push(Math.pow(elemento,2))
-       }
-   }
-   return arrayParesAoQuadrado
-   
+    let arrayParesAoQuadrado = []
+    for (let elemento of array) {
+        if (elemento % 2 === 0) {
+            arrayParesAoQuadrado.push(Math.pow(elemento, 2))
+        }
+    }
+    return arrayParesAoQuadrado
+
 }
 
 // EXERCÍCIO 06
 function retornaMaiorNumero(array) {
-  let maiorNumero=array[0]
-  for(let elemento of array){
-      if(maiorNumero < elemento){
-          maiorNumero=elemento
-      }
-  }
-  return maiorNumero
+    let maiorNumero = array[0]
+    for (let elemento of array) {
+        if (maiorNumero < elemento) {
+            maiorNumero = elemento
+        }
+    }
+    return maiorNumero
 }
 
 // EXERCÍCIO 07
 function retornaObjetoEntreDoisNumeros(num1, num2) {
-     let menorNumero=0
-    let objDeNumeros={ }
-    if(num1>num2){
-        objDeNumeros.maiorNumero=num1
-        menorNumero=num2
-    }else{
-        objDeNumeros.maiorNumero=num2
-        menorNumero=num1
+    let menorNumero = 0
+    let objDeNumeros = {}
+    if (num1 > num2) {
+        objDeNumeros.maiorNumero = num1
+        menorNumero = num2
+    } else {
+        objDeNumeros.maiorNumero = num2
+        menorNumero = num1
     }
-    if(objDeNumeros.maiorNumero%menorNumero===0){
-        objDeNumeros.maiorDivisivelPorMenor=true
-    }else{
-        objDeNumeros.maiorDivisivelPorMenor=false
+    if (objDeNumeros.maiorNumero % menorNumero === 0) {
+        objDeNumeros.maiorDivisivelPorMenor = true
+    } else {
+        objDeNumeros.maiorDivisivelPorMenor = false
     }
-    objDeNumeros.diferenca=objDeNumeros.maiorNumero-menorNumero
-    
+    objDeNumeros.diferenca = objDeNumeros.maiorNumero - menorNumero
+
     return objDeNumeros
 }
 
 // EXERCÍCIO 08
 function retornaNPrimeirosPares(n) {
-   
+    let arrayPares=[]
+   while(arrayPares.length<3){
+       for(let i=0;i<n*2;i++){
+          if(i%2===0){
+            arrayPares.push(i)
+          }
+       }
+   }
+   return arrayPares
 }
 
 // EXERCÍCIO 09
@@ -91,27 +99,27 @@ function classificaTriangulo(ladoA, ladoB, ladoC) {
 
 // EXERCÍCIO 10
 function retornaSegundoMaiorESegundoMenor(array) {
-  
+
 }
 
 // EXERCÍCIO 11
 function retornaChamadaDeFilme(filme) {
-   
+
 }
 
 // EXERCÍCIO 12
 function retornaPessoaAnonimizada(pessoa) {
-   
+
 }
 
 // EXERCÍCIO 13A
 function retornaPessoasAutorizadas(pessoas) {
-   
+
 }
 
 // EXERCÍCIO 13B
 function retornaPessoasNaoAutorizadas(pessoas) {
-  
+
 }
 
 // EXERCÍCIO 14
@@ -121,10 +129,10 @@ function retornaContasComSaldoAtualizado(contas) {
 
 // EXERCÍCIO 15A
 function retornaArrayOrdenadoAlfabeticamente(consultas) {
-  
+
 }
 
 // EXERCÍCIO 15B
 function retornaArrayOrdenadoPorData(consultas) {
-   
+
 }
