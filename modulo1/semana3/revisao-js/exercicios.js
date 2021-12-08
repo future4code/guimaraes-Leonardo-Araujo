@@ -81,30 +81,42 @@ function retornaObjetoEntreDoisNumeros(num1, num2) {
 
 // EXERCÍCIO 08
 function retornaNPrimeirosPares(n) {
-    let arrayPares=[]
-    for(let i=0;arrayPares.length<n;i++){
-        if(i%2===0){
-          arrayPares.push(i)
+    let arrayPares = []
+    for (let i = 0; arrayPares.length < n; i++) {
+        if (i % 2 === 0) {
+            arrayPares.push(i)
         }
-     }
-   
-   return arrayPares
+    }
+
+    return arrayPares
 }
 
 // EXERCÍCIO 09
 function classificaTriangulo(ladoA, ladoB, ladoC) {
-    if(ladoA===ladoB&& ladoA===ladoC){
+    if (ladoA === ladoB && ladoA === ladoC) {
         return "Equilátero"
-    }else if(ladoA===ladoB && ladoA!==ladoC ||ladoC===ladoA && ladoC!==ladoB|| ladoB===ladoC&& ladoB!==ladoA){
+    } else if (ladoA === ladoB && ladoA !== ladoC || ladoC === ladoA && ladoC !== ladoB || ladoB === ladoC && ladoB !== ladoA) {
         return "Isósceles"
-    }else{
+    } else {
         return "Escaleno"
     }
 }
 
 // EXERCÍCIO 10
 function retornaSegundoMaiorESegundoMenor(array) {
-
+    let maiorNumero = Math.max(...array)
+    let menorNumero = Math.min(...array)
+    let arrayInicial = [...array]
+    if (array.length > 2) {
+        arrayInicial.splice(arrayInicial.indexOf(maiorNumero), 1)
+        arrayInicial.splice(arrayInicial.indexOf(menorNumero), 1)
+        maiorNumero = Math.max(...arrayInicial)
+        menorNumero = Math.min(...arrayInicial)
+    }else{
+        maiorNumero = Math.min(...arrayInicial)
+        menorNumero = Math.max(...arrayInicial)
+    }
+    return [maiorNumero, menorNumero]
 }
 
 // EXERCÍCIO 11
