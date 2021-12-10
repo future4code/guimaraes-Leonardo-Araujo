@@ -19,9 +19,15 @@ function retornaArrayInvertido(array) {
 
 // EXERCÍCIO 03
 function retornaArrayOrdenado(array) {
-    return array.sort((a, b) => {
-        return a - b
-    })
+    let ArrayOrdenadoCrescente=[]
+    let maiorNumero=0
+    let copiaDoArrayOriginal=[...array]
+    while(copiaDoArrayOriginal.length>=1){
+        maiorNumero=Math.max(...copiaDoArrayOriginal)
+        ArrayOrdenadoCrescente.unshift(maiorNumero)
+        copiaDoArrayOriginal.splice(copiaDoArrayOriginal.indexOf(maiorNumero),1)
+    }
+    return ArrayOrdenadoCrescente
 }
 
 // EXERCÍCIO 04
@@ -185,5 +191,12 @@ function retornaArrayOrdenadoAlfabeticamente(consultas) {
 
 // EXERCÍCIO 15B
 function retornaArrayOrdenadoPorData(consultas) {
-
+    let ConsultasOrdenadasPorData=consultas.sort((a,b)=>{
+        if(a.dataDaConsulta< b.dataDaConsulta){
+            return -1
+        }else{
+            return true
+        }
+    })
+    return ConsultasOrdenadasPorData
 }
