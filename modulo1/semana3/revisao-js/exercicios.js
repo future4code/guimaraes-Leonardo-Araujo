@@ -194,7 +194,7 @@ function retornaArrayOrdenadoPorData(consultas) {
   let data=""
   for(let elemento of consultas){
       data=elemento.dataDaConsulta.split("/")
-      elemento.dataDaConsulta=data[2]+"/"+data[1]+"/"+data[0]
+      elemento.dataDaConsulta=new Date(data[2]+"/"+data[1]+"/"+data[0])
      
   }
   let arrayNovo=consultas.sort((a,b)=>{
@@ -205,9 +205,10 @@ function retornaArrayOrdenadoPorData(consultas) {
     }
   })
   for(let elemento of arrayNovo){
-    data=elemento.dataDaConsulta.split("/")
-    elemento.dataDaConsulta=data[2]+"/"+data[1]+"/"+data[0]
-   
+ let dia ="0"+elemento.dataDaConsulta.getDate()
+ let mes ="0"+(elemento.dataDaConsulta.getMonth()+1)
+ let ano =elemento.dataDaConsulta.getFullYear()
+  elemento.dataDaConsulta=dia+"/"+mes+"/"+ano
 }
   return arrayNovo
 }
