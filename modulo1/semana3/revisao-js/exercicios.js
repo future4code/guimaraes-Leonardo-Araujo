@@ -191,12 +191,23 @@ function retornaArrayOrdenadoAlfabeticamente(consultas) {
 
 // EXERCÍCIO 15B
 function retornaArrayOrdenadoPorData(consultas) {
-    let ConsultasOrdenadasPorData=consultas.sort((a,b)=>{
-        if(a.dataDaConsulta< b.dataDaConsulta){
-            return -1
-        }else{
-            return true
-        }
-    })
-    return ConsultasOrdenadasPorData
+  let data=""
+  for(let elemento of consultas){
+      data=elemento.dataDaConsulta.split("/")
+      elemento.dataDaConsulta=data[2]+"/"+data[1]+"/"+data[0]
+     
+  }
+  let arrayNovo=consultas.sort((a,b)=>{
+    if(a.dataDaConsulta< b.dataDaConsulta){
+        return -1
+    }else{
+        return true
+    }
+  })
+  for(let elemento of arrayNovo){
+    data=elemento.dataDaConsulta.split("/")
+    elemento.dataDaConsulta=data[2]+"/"+data[1]+"/"+data[0]
+   
+}
+  return arrayNovo
 }
