@@ -1,0 +1,9 @@
+O primeiro dos 7 passos é ter atenção no enunciado, nesta etapa precisamos ler o enunciado com muita atenção, para que seja possível entender perfeitamente o sistema deve fazer, está etapa é muito importante pois se não conseguimos ter a visão exata de todas as etapas necessária para se alcançar o objetivo.
+Na segunda etapa nós retiramos as palavras chaves do enunciado, onde as mesmas se tornarão variáveis, funções e condições necessárias para executarmos o programa.
+Na terceira etapa devemos pensar em como os dados serão trabalhados, como eles serão inseridos no sistema e como será a saída deles
+Na quarta etapa devemos criar uma representação visual do passo a passo que o programa deve fazer, com a finalidade facilitar a estruturação do código
+Na quinta etapa é onde começamos a codificação, é onde experimentamos todas as possíveis soluções
+Na sexta etapa é onde fazemos os testes, para verificarmos se os resultados estão atendendo ao que enunciado pede
+Na sétima etapa refatoramos o código, ou seja, tornamos o código melhor reduzindo a quantidade de linhas e tornando o código mais fácil de ser lido
+Este passo a passo é importante pois nos dá um norte para seguirmos, de forma que não ficaremos perdidos sem saber por onde começar.   
+  
