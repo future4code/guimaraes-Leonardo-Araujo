@@ -1,67 +1,86 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Adicionar Produto</title>
+    <link href="estilo.css" rel="stylesheet">
 </head>
-<body>
-    <div>
-        <h2>Saitech</h2>
-    </div>
-    
-    <div>
-        <a href="./index.html">Página Inicial</a>
-        <a href="./ctrl-estoque.html">Controle de Estoque</a>
-        <a href="./add-produto.html">Adicionar Produto</a>
-        <a href="./funcionarios.html">Funcionários</a>
-    </div><hr>
 
-    
-    <h2>Adicionar Produto</h2>
-    <form action="">
-        <fieldset>
-            <div>
-                <label for="link-foto">Link para foto: </label>
-                <input type="url" id="link-foto" name="link-foto" placeholder="Digite a url aqui !">
-            </div>
-            
-            <div>
-                <label for="descricao">Descrição do produto: </label>
-                <!-- Adicione o id apropriado para o input abaixo -->
-                <input type="text" id="descricao" name="descrição"placeholder="Digite a descrição aqui !"/>
-            </div>
-            
-            <div>
-                <label for="preco">Preço (em R$): </label>
-                <!-- Adicione o id apropriado e o type para receber números abaixo -->
-                <input type="number" id="preco" name="preço"placeholder="Digite a preço do produto  aqui !"/>
-            </div>
-            
-            <div>
-                <!-- Preencha as propriedades necessárias para os elementos abaixo -->
-                <label for="qtd_disponivel">Quantidade disponível: </label>
-                <input type="number" id="qtd_disponivel" name="qtd_produtos"placeholder="Digite a quantidade disponivel aqui !"/>
-            </div>
-    
-            <div class="form-add">
-                <!-- Adicione ao type do botão abaixo o valor para que ele submeta o formulário -->
-                <button type="submit">Adicionar</button>
-            </div>
-    
-        </fieldset>
-    </form><ht></ht>
-    <div>
+<body>
+    <header id="cabecalho">
+        <div id="logo">
+            <a href="index.html"><img src="./img/logo.png" alt="logomarca" /></a>
+
+            <p>Sinta-se conectado</p>
+        </div>
+
+        <div id="menu">
+            <a href="./index.html">Página Inicial</a>
+            <a href="./ctrl-estoque.html">Controle de Estoque</a>
+            <a href="./add-produto.html">Adicionar Produto</a>
+            <a href="./funcionarios.html">Funcionários</a>
+        </div>
+    </header>
+
+    <div id="conteudo-adicinar-produto">
+        <h2>Adicionar Produto</h2>
+        <form action="">
+            <fieldset>
+                <div>
+                    <label for="link-foto">Link para foto: </label><br>
+                    <input type="url" id="link-foto" name="link-foto" placeholder="Digite a url aqui !">
+                </div>
+
+                <div>
+                    <label for="descricao">Descrição do produto: </label><br>
+                    <!-- Adicione o id apropriado para o input abaixo -->
+                    <input type="text" id="descricao" name="descrição" placeholder="Digite a descrição aqui !" />
+                </div>
+
+                <div>
+                    <label for="preco">Preço (em R$): </label><br>
+                    <!-- Adicione o id apropriado e o type para receber números abaixo -->
+                    <input type="number" id="preco" name="preço" placeholder="Digite a preço do produto  aqui !" />
+                </div>
+
+                <div>
+                    <!-- Preencha as propriedades necessárias para os elementos abaixo -->
+                    <label for="qtd_disponivel">Quantidade disponível: </label><br>
+                    <input type="number" id="qtd_disponivel" name="qtd_produtos"
+                        placeholder="Digite a quantidade disponivel aqui !" />
+                </div>
+
+                <div class="form-add">
+                    <!-- Adicione ao type do botão abaixo o valor para que ele submeta o formulário -->
+                    <button type="submit">Adicionar</button>
+                </div>
+
+            </fieldset>
+        </form>
+    </div>
+    <footer>
         <h3>Siga-nos nas redes sociais!</h3>
 
         <div>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14628.26498879571!2d-46.65955006779579!3d-23.56606408670706!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c8da0aa315%3A0xd59f9431f2c9776a!2sAv.%20Paulista%20-%20Bela%20Vista%2C%20S%C3%A3o%20Paulo%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1639511850886!5m2!1spt-BR!2sbr" height="300px" width="400px"allowfullscreen="" loading="lazy"></iframe>
-            <img src="https://image.flaticon.com/icons/png/512/25/25305.png" height="50px"/>
-            <img src="https://image.flaticon.com/icons/png/512/25/25425.png"height="50px"/>
-            <img src="https://image.flaticon.com/icons/png/512/8/8800.png"height="50px"/>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14628.26498879571!2d-46.65955006779579!3d-23.56606408670706!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c8da0aa315%3A0xd59f9431f2c9776a!2sAv.%20Paulista%20-%20Bela%20Vista%2C%20S%C3%A3o%20Paulo%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1639511850886!5m2!1spt-BR!2sbr"
+                allowfullscreen="" loading="lazy"></iframe>
+            <span>Av. Paulista,São Paulo - SP - CEP 01311-000 </span>
+            <a href="https://www.facebook.com/">
+                <img src="https://image.flaticon.com/icons/png/512/25/25305.png" height="50px" />
+            </a>
+            <a href="https://www.instagram.com/">
+                <img src="https://image.flaticon.com/icons/png/512/25/25425.png" height="50px" />
+            </a>
+            <a href="https://twitter.com/">
+                <img src="https://image.flaticon.com/icons/png/512/8/8800.png" height="50px" />
+            </a>
         </div>
-    </div><hr>
-
+    </footer>
+    <hr>
 </body>
+
 </html>
