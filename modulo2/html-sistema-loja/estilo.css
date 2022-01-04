@@ -1,0 +1,163 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: #24C0EB;
+
+}
+#cabecalho {
+   
+    height: 8em;
+
+}
+
+#menu {
+    float: right;
+    margin-right: 20px;
+    line-height: 4em;
+    
+}
+#menu a{
+    text-decoration: none;
+    color: black;
+    font-size: 1.1em;
+    font-weight: bolder;
+    margin: 4px;
+    
+   
+    
+}
+#menu a:hover{
+    color: white;
+    background-color:#0ea8ad;
+   
+}
+#logo{
+    height: 30px;
+    font-size: 1,5em;
+    color: white;
+    
+}
+#logo img{
+    height: 100px;
+    
+}
+#logo p{
+    margin-left: 24px;
+    line-height: 8px;
+    font-size: 20px;
+}
+.conteudo{
+    display: flex;
+    align-items:flex-end;
+    
+}
+.conteudo div {
+    padding:10px;
+    width: 30%;
+    font-size: 1em;
+    height: 405px;
+    margin: 10px;
+    background-color: white;
+    border-radius: 10px;
+    text-align: center;
+       
+}
+.conteudo div p{
+    margin: 10px;
+}
+.conteudo div a{
+    text-decoration: none;
+    color: white;
+    font-weight: bolder;
+   
+}
+.conteudo div a span{
+    font-size: 20px;
+    padding:10px;
+    border-radius: 15px;
+   
+    background-color: rgb(16, 165, 165);
+
+}
+.conteudo div a span:hover{
+    background-color: rgb(7, 82, 82);
+}
+.conteudo div img{
+    width: 50%;
+}
+.conteudo-funcionarios{
+    text-align: center;
+    font-size: 30px;
+    padding: 0;
+    margin: 10;
+    background-color: rgb(144, 230, 230);
+}
+.conteudo-funcionarios img{
+    height: 215px;
+    width: 215px;
+    border-radius: 50%;
+}
+.conteudo-estoque{
+    text-align: center;
+    font-size: 30px;
+    background-color: rgb(144, 230, 230);
+}
+
+.conteudo-estoque table{
+    margin: 40px auto;
+}
+.conteudo-estoque table tr th{
+    border:2px solid black;
+    padding: 5px;
+    background-color: rgb(255, 71, 194);
+    
+}
+.conteudo-estoque table tr td{
+    border:2px solid black;
+    padding: 5px;
+}
+.conteudo-estoque table tr td:hover{
+    background-color: yellow;
+    cursor: pointer;
+}
+#conteudo-adicinar-produto{
+    text-align: center;
+    font-size: 30px;
+    
+    background-color: rgb(144, 230, 230);
+}
+#conteudo-adicinar-produto  button{
+   width: 150px;
+   height: 40px;
+   border-radius: 20px;
+   margin-bottom: 20px;
+   background-color:rgb(255, 71, 194);
+   color: white;font-weight: bolder;
+    
+}
+#conteudo-adicinar-produto  button:hover{
+    background-color:rgb(225, 240, 18);
+    color: black;
+}
+#conteudo-adicinar-produto input{
+    width: 400px;
+    height: 35px;
+    padding: 2px;
+    margin:5px;
+    border-radius: 20px;
+}
+footer{
+   background-color: rgb(16, 165, 165);
+    height: 100%;
+    padding: 10px;
+    
+}
+footer h3{
+    color:white;
+    margin: 15px;
+}
+footer a img:hover{
+    background-color: rgb(122, 228, 241);
+}

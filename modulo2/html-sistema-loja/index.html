@@ -1,54 +1,88 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Saitech</title>
+    <link href="estilo.css" rel="stylesheet">
 </head>
-<body>
-    <div>
-        <h1>Bem-vind@ ao <em>Saitech</em>!</h1>
-        <p>Sinta-se conectado</p>
-    </div>
 
-    <div>
-        <a href="./index.html">Página Inicial</a>
-        <a href="./ctrl-estoque.html">Controle de Estoque</a>
-        <a href="./add-produto.html">Adicionar Produto</a>
-        <a href="./funcionarios.html">Funcionários</a>
-    </div>
-    <hr>
-    <div>
+<body>
+    <header id="cabecalho">
+        <div id="logo">
+            <a href=""><img src="./img/logo.png" alt="logomarca" /></a>
+
+            <p>Sinta-se conectado</p>
+        </div>
+
+        <div id="menu">
+            <a href="./index.html">Página Inicial</a>
+            <a href="./ctrl-estoque.html">Controle de Estoque</a>
+            <a href="./add-produto.html">Adicionar Produto</a>
+            <a href="./funcionarios.html">Funcionários</a>
+        </div>
+    </header>
+
+    <img src="./img/loja.jpg" width="100%" />
+    <div >
         <!-- ADICIONAR INFORMAÇOES SOBRE SUA LOJINHA -->
-        <img src="./img/loja.jpg" width="95%"/>
-        <h2>Novidades</h2><hr>
-        <div>
-            <span>
-                <img src="./img/produto01.webp" alt="computador" width="32%"/>
-                <strong>Notebook Inspiron</strong>
-                <p>Produtos G Series conferem a você todos os elementos essenciais para obter capacidade de resposta em frações de segundos e jogabilidade imersiva.</p>
-            </span><hr>
-            <span>
-                <img src="./img/produto02.webp" alt="smartphone " width="32%"/>
-                <strong>Galaxy Z Fold3 5G</strong>
-                <p>Ele tem tudo o que você gostaria em um smartphone 5G premium e durável.1 Mas para melhorar, fizemos ele dobrável, com uma tela enorme para que você possa assistir, trabalhar e se divertir como nunca antes.</p>
-            </span><hr>
-            <span></span>
+        <h2>Bem-vind@ ao <em>Saitech</em>!</h2>
+
+        <h2>Novidades</h2>
+        <div class="conteudo">
+
+            <div>
+                <img src="./img/produto01.webp" alt="computador" />
+                <p><strong> Inspiron</strong></p>
+                <p>Produtos G Series conferem a você todos os elementos essenciais para obter capacidade de resposta em
+                    frações de segundos e jogabilidade imersiva.</p>
+                    <a href=""> <span>saiba mais</span></a>
+            </div>
+
+
+            <div>
+                <img src="./img/produto02.webp" alt="smartphone " />
+                <p><strong> Z Fold3 5G</strong></p>
+                <p>Ele tem tudo o que você gostaria em um smartphone 5G premium e durável.1 Mas para melhorar, fizemos
+                    ele dobrável, com uma tela enorme para que você possa assistir, trabalhar e se divertir como nunca
+                    antes.</p>
+                    <a href=""> <span>saiba mais</span></a>
+            </div>
+            <div>
+                <img src="./img/headphone.jfif" alt="smartphone " />
+                <p> <strong>  H2016D Gamer</strong></p>
+                <p>Fone de Ouvido Headphone com Microfone Havit H2016D Gamer RGB Plug 3.5mm</p>
+                <a href=""> <span>saiba mais</span></a>
+            </div>
+
         </div>
 
 
+
     </div>
 
-    <div>
+    <footer>
         <h3>Siga-nos nas redes sociais!</h3>
 
         <div>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14628.26498879571!2d-46.65955006779579!3d-23.56606408670706!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c8da0aa315%3A0xd59f9431f2c9776a!2sAv.%20Paulista%20-%20Bela%20Vista%2C%20S%C3%A3o%20Paulo%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1639511850886!5m2!1spt-BR!2sbr" height="300px" width="400px"allowfullscreen="" loading="lazy"></iframe>
-            <img src="https://image.flaticon.com/icons/png/512/25/25305.png" height="50px"/>
-            <img src="https://image.flaticon.com/icons/png/512/25/25425.png"height="50px"/>
-            <img src="https://image.flaticon.com/icons/png/512/8/8800.png"height="50px"/>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14628.26498879571!2d-46.65955006779579!3d-23.56606408670706!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c8da0aa315%3A0xd59f9431f2c9776a!2sAv.%20Paulista%20-%20Bela%20Vista%2C%20S%C3%A3o%20Paulo%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1639511850886!5m2!1spt-BR!2sbr"
+                allowfullscreen="" loading="lazy"></iframe>
+            <span>Av. Paulista,São Paulo - SP - CEP 01311-000 </span>
+            <a href="https://www.facebook.com/">
+                <img src="https://image.flaticon.com/icons/png/512/25/25305.png" height="50px" />
+            </a>
+            <a href="https://www.instagram.com/">
+                <img src="https://image.flaticon.com/icons/png/512/25/25425.png" height="50px" />
+            </a>
+            <a href="https://twitter.com/">
+                <img src="https://image.flaticon.com/icons/png/512/8/8800.png" height="50px" />
+            </a>
         </div>
-    </div><hr>
+    </footer>
+    <hr>
 </body>
+
 </html>

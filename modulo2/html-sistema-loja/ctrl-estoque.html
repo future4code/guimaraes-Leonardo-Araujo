@@ -1,80 +1,100 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Controle de Estoque</title>
+    <link href="estilo.css" rel="stylesheet">
 </head>
+
 <body>
-    <div>
-        <h2>Saitech</h2>
+    <header id="cabecalho">
+        <div id="logo">
+            <a href="index.html"><img src="./img/logo.png" alt="logomarca" /></a>
+
+            <p>Sinta-se conectado</p>
+        </div>
+
+        <div id="menu">
+            <a href="./index.html">Página Inicial</a>
+            <a href="./ctrl-estoque.html">Controle de Estoque</a>
+            <a href="./add-produto.html">Adicionar Produto</a>
+            <a href="./funcionarios.html">Funcionários</a>
+        </div>
+    </header>
+
+    <div class="conteudo-estoque">
+        <h2>Controle de Estoque</h2>
+
+        <table>
+            <tr>
+                <th>Foto</th>
+                <th>Descrição</th>
+                <th>Preço (R$)</th>
+                <th>Quantidade disponível</th>
+            </tr>
+
+            <tr>
+                <td><img src="./img/notebook.jfif" alt="Notebooks" height="50px" /></td>
+                <td> Notebooks </td>
+                <td> 3999,99 </td>
+                <td> 15 </td>
+            </tr>
+
+            <tr>
+                <td><img src="./img/tablet.jfif" alt="Tablets" height="50px" /></td>
+                <td> Tablets </td>
+                <td> 2249,99 </td>
+                <td> 9 </td>
+            </tr>
+
+            <tr>
+                <td><img src="./img/SSD.jfif" alt="SSD" height="50px" /></td>
+                <td>SSD </td>
+                <td> 333,47 </td>
+                <td> 6 </td>
+            </tr>
+
+            <tr>
+                <td><img src="./img/fones.jfif" alt="Fone de ouvido" height="50px" /></td>
+                <td> Fone de ouvido </td>
+                <td> 129,99 </td>
+                <td> 4 </td>
+            </tr>
+
+            <!-- Crie mais uma linha desta tabela abaixo \/ -->
+            <tr>
+                <td><img src="./img/monitor.jfif" alt="Monitor de gamer" height="50px" /></td>
+                <td>Monitor</td>
+                <td>1519,00</td>
+                <td>11</td>
+            </tr>
+
+        </table>
+        <hr>
     </div>
-    
-    <div>
-        <a href="./index.html">Página Inicial</a>
-        <a href="./ctrl-estoque.html">Controle de Estoque</a>
-        <a href="./add-produto.html">Adicionar Produto</a>
-        <a href="./funcionarios.html">Funcionários</a>
-    </div><hr>
-
-    <h2>Controle de Estoque</h2>
-
-    <table >
-        <tr>
-            <th>Foto</th>
-            <th>Descrição</th>
-            <th>Preço (R$)</th>
-            <th>Quantidade disponível</th>
-        </tr>
-
-        <tr>
-            <td><img src="./img/notebook.jfif" alt="Notebooks" height="50px"/></td>
-            <td> Notebooks </td>
-            <td> 3999,99 </td>
-            <td> 15 </td>
-        </tr>
-
-        <tr>
-            <td><img src="./img/tablet.jfif" alt="Tablets"height="50px"/></td>
-            <td> Tablets </td>
-            <td> 2249,99 </td>
-            <td> 9 </td>
-        </tr>
-
-        <tr>
-            <td><img src="./img/SSD.jfif" alt="SSD"height="50px"/></td>
-            <td>SSD </td>
-            <td> 333,47 </td>
-            <td> 6 </td>
-        </tr>
-
-        <tr>
-            <td><img src="./img/fones.jfif" alt="Fone de ouvido"height="50px"/></td>
-            <td> Fone de ouvido </td>
-            <td> 129,99 </td>
-            <td> 4 </td>
-        </tr>
-        
-        <!-- Crie mais uma linha desta tabela abaixo \/ -->
-        <tr>
-            <td><img src="./img/monitor.jfif" alt="Monitor de gamer"height="50px"/></td>
-            <td>Monitor</td>
-            <td>1519,00</td>
-            <td>11</td>
-        </tr>
-
-    </table><hr>
-    <div>
+    <footer>
         <h3>Siga-nos nas redes sociais!</h3>
 
         <div>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14628.26498879571!2d-46.65955006779579!3d-23.56606408670706!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c8da0aa315%3A0xd59f9431f2c9776a!2sAv.%20Paulista%20-%20Bela%20Vista%2C%20S%C3%A3o%20Paulo%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1639511850886!5m2!1spt-BR!2sbr" height="300px" width="400px"allowfullscreen="" loading="lazy"></iframe>
-            <img src="https://image.flaticon.com/icons/png/512/25/25305.png" height="50px"/>
-            <img src="https://image.flaticon.com/icons/png/512/25/25425.png"height="50px"/>
-            <img src="https://image.flaticon.com/icons/png/512/8/8800.png"height="50px"/>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14628.26498879571!2d-46.65955006779579!3d-23.56606408670706!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c8da0aa315%3A0xd59f9431f2c9776a!2sAv.%20Paulista%20-%20Bela%20Vista%2C%20S%C3%A3o%20Paulo%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1639511850886!5m2!1spt-BR!2sbr"
+                allowfullscreen="" loading="lazy"></iframe>
+            <span>Av. Paulista,São Paulo - SP - CEP 01311-000 </span>
+            <a href="https://www.facebook.com/">
+                <img src="https://image.flaticon.com/icons/png/512/25/25305.png" height="50px" />
+            </a>
+            <a href="https://www.instagram.com/">
+                <img src="https://image.flaticon.com/icons/png/512/25/25425.png" height="50px" />
+            </a>
+            <a href="https://twitter.com/">
+                <img src="https://image.flaticon.com/icons/png/512/8/8800.png" height="50px" />
+            </a>
         </div>
-    </div><hr>
-
+    </footer>
+    <hr>
 </body>
+
 </html>
