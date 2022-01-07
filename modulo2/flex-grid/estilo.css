@@ -75,7 +75,10 @@ main section {
 
 
 }
-
+main section div{
+    box-shadow: 3px 3px  darkgray;
+    padding-bottom: 5px;
+}
 main section img {
     height: 250px;
     width: 100%;
