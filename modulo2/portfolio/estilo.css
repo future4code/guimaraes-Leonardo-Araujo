@@ -75,7 +75,7 @@ main section div{
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    max-width: 350px;
+    max-width: 650px;
    
    margin-left: 30px;
    text-align: justify;
@@ -108,6 +108,39 @@ main section div a button:hover{
     transform: scale(1.3);
     cursor: pointer;
 }
+/* Sobre mim*/
+main #sobre-mim {
+    display: flex;
+    
+    justify-content:center;
+    background-color: rgb(39, 34, 35);
+    color: white;
+}
+main #sobre-mim img{
+    border-radius: 50%;
+    height: 400px;
+}
+#descricao-sobre{
+    font-weight: lighter;
+   
+}
+main #cursos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(39, 34, 35);
+    color: white;
+}
+main #cursos h1{
+    font-size: 60px;
+    margin: 30px;
+}
+main #cursos ul{
+    list-style:url(./img/chapeu-de-graduacao.png) ;
+    margin: 40px;
+    
+}
+
 /*footer*/
 footer{
     display: flex;
