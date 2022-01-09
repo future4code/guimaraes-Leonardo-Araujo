@@ -162,7 +162,7 @@ main #portifolio .galeria{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    background-color: violet;
+    background-color: rgb(230, 213, 230);
     padding: 10px;
     margin: 30px;
 }
@@ -172,6 +172,7 @@ main #portifolio .galeria a {
 }
 main #portifolio .galeria a img{
    width: 470px;
+   height: 300px;
 }
 /* contato */
 main #contato {
@@ -183,33 +184,48 @@ main #contato {
 main #contato .formulario{
     padding: 20px;
     width: 40%;
+    min-width: 500px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: rgb(75, 73, 216);
     color: rgb(21, 23, 24);
+    color: white;
+    border-radius: 40px;
+    box-shadow: 6px 10px rgb(128, 78, 5);
     
     
 }
 main #contato .formulario input{
     width: 400px;
     height: 30px;
+    border-radius: 50px;
+    margin: 15px 0;
 }
 main #contato .formulario textarea{
     width: 400px;
+    margin: 15px 0;
 }
 main #contato .formulario h1{
     font-size: 60px;
     margin-bottom: 30px;
 }
 main #contato .formulario button{
-    width: 100px;
+    width: 100%;
     background-color: rgb(29, 223, 22);
     color: white;
     padding: 15px;
     border-radius: 20px;
+    align-self: center;
+    font-size: 30px;
     
+    
+}
+main #contato .formulario button:hover{
+    cursor: pointer;
+    background-color: tomato;
+    font-weight: bolder;
 }
 /*footer*/
 footer{
