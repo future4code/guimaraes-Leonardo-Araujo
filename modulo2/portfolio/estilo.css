@@ -257,6 +257,15 @@ main #finans p{
 main #finans ul li{
     margin: 20px;
 }
+#skills ol {
+    display: flex;
+    margin: 40px;
+    list-style: none;
+}
+#skills ol li img{
+    height: 70px;
+    margin: 0 30px;
+}
 
 /*footer*/
 footer{
