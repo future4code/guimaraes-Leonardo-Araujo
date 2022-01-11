@@ -1,0 +1,66 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+header{
+    display: flex;
+    background-color:  #EF843A;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+}
+header #logo{
+    height: 100px;
+}
+header .pesquisa{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+header .pesquisa img{
+    height:42px ;
+    cursor: pointer;
+    padding: 3px;
+    box-sizing: border-box;
+    border: 1px solid rgb(247, 86, 22);
+    border-radius: 0 10px 10px 0;
+}
+header .pesquisa input{
+    line-height: 40px;
+}
+main #grade{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat(3,1fr);
+    gap: 30px;
+    padding:40px ;
+}
+main #grade .card {
+    border: 1px solid green;
+    box-shadow: 4px 3px rgb(144, 148, 144);
+}
+main #grade .card img{
+    width: 100%;
+}
+footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 0;
+    background-color: #323B3E;
+}
+footer>p a img{
+    height: 50px;
+}
+footer>p a{
+    margin: 0 10px;
+}
+footer>p a img:hover{
+    background-color: rgb(241, 92, 6);
+    border-radius: 10px;
+}
+footer p{
+    margin-top: 20px;
+    color: white;
+}
