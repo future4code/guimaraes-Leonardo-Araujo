@@ -1,97 +1,150 @@
-*{
+* {
     margin: 0;
     padding: 0;
 }
-header{
+
+header {
     display: flex;
-    background-color:  #EF843A;
+    background-color: #EF843A;
     justify-content: space-between;
     align-items: center;
     padding: 0 40px;
 }
-header #logo{
+
+header #logo {
     height: 100px;
 }
-header .pesquisa{
+
+header .pesquisa {
     display: flex;
     justify-content: center;
     align-items: center;
-    
+
 }
-header .pesquisa img{
-    height:42px ;
+
+header .pesquisa img {
+    height: 42px;
     cursor: pointer;
     padding: 3px;
     box-sizing: border-box;
     border: 1px solid rgb(247, 86, 22);
     border-radius: 0 10px 10px 0;
 }
-header .pesquisa input{
+
+header .pesquisa input {
     line-height: 40px;
 }
+
 /* HOME*/
-main #grade{
-    display: grid;
-    grid-template-columns: repeat(4,1fr);
-    grid-template-rows: repeat(3,1fr);
-    gap: 30px;
-    padding:40px ;
+@media screen and (max-width:600px) {
+    main section#grade {
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+       
+        
+    }
+    main section#grade .card{
+        width: 85vw;
+    }
+    .pesquisa input{
+        width: 20vw;
+        
+    }
+    .pesquisa img{
+        display: none;
+    }
+    header #logo{
+        width: 30vw;
+        min-width: 80px;
+    }
+    
 }
+@media screen and (min-width:601px)and (max-width:900px){
+    main section#grade{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media screen and (min-width:901px)and (max-width:1200px){
+    main section#grade{
+        grid-template-columns:1fr 1fr 1fr;
+    }
+}
+
+main #grade {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 30px;
+    padding: 40px;
+}
+
 main #grade .card {
     border: 1px solid green;
     box-shadow: 4px 3px rgb(144, 148, 144);
     padding: 10px;
     text-align: center;
-    
+
 }
-main #grade .card:hover{
+
+main #grade .card:hover {
     background-color: rgb(17, 202, 48);
     transform: scale(1.1);
 }
-main #grade .card a{
+
+main #grade .card a {
     color: black;
     text-decoration: none;
 }
-main #grade .card a img{
+
+main #grade .card a img {
     width: 100%;
     height: 300px;
-    border-radius:  5px 5px 0 0;
+    border-radius: 5px 5px 0 0;
 }
+
 /*  página video */
-main .video{
+main .video {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    
-   padding: 50px;
+
+    padding: 50px;
 }
-main .video h2{
+
+main .video h2 {
     margin-bottom: 30px;
 }
-main .video video{
+
+main .video video {
     height: 600px;
     width: 100%;
     margin-bottom: 120px;
 }
-footer{
+
+footer {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 30px 0;
     background-color: #323B3E;
 }
-footer>p a img{
+
+footer>p a img {
     height: 50px;
 }
-footer>p a{
+
+footer>p a {
     margin: 0 10px;
 }
-footer>p a img:hover{
+
+footer>p a img:hover {
     background-color: rgb(241, 92, 6);
     border-radius: 10px;
     transform: scale(1.3);
 }
-footer p{
+
+footer p {
     margin-top: 20px;
     color: white;
 }
