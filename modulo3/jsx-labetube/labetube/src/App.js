@@ -1,4 +1,9 @@
 import './App.css';
+import home from"./img/iconehome.png"
+import explorar from"./img/explorar.png"
+import incricoes from"./img/inscricoes.png"
+import original from"./img/original.png"
+import historico from"./img/historico.png"
 
 function App() {
   const titulo = "Título do vídeo"
@@ -9,17 +14,25 @@ function App() {
     <div className="tela-inteira">
         <header>
             <h1>Lab Tube</h1>
-            <input type="text" placeholder="Busca" id="campoDeBusca"/>
+            <div>
+              <input type="text" placeholder="Busca" id="campoDeBusca"/>
+              <img id="pesquisa" src="https://cdn.pixabay.com/photo/2017/01/13/01/22/magnifying-glass-1976105_960_720.png" alt="pesquisa" />
+            </div>
         </header>
 
         <main>
             <nav className="menu-vertical">
                 <ul>
+                    <img src={home} alt=" home"/>
                     <li className="botoes-meunu-vertical">Início</li>
+                    <img src={explorar} alt=" home"/>
                     <li className="botoes-meunu-vertical">Em alta</li>
+                    <img src={incricoes} alt=" home"/>
                     <li className="botoes-meunu-vertical">Inscrições</li>
-                    <hr/>
+                    <hr/><hr/>
+                    <img src={original} alt=" home"/>
                     <li className="botoes-meunu-vertical">Originais</li>
+                    <img src={historico} alt=" home"/>
                     <li className="botoes-meunu-vertical">Histórico</li>
                 </ul>
             </nav>

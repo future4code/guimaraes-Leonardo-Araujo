@@ -1,3 +1,7 @@
+*{
+  margin: 0;
+  padding: 0;
+}
 body {
   width: 100%;
   padding: 0;
@@ -17,18 +21,61 @@ header {
   align-items: center;
   justify-content: space-between;
   padding: 0 50px;
-  height: 10%;
+  height: 15%;
+}
+header>div{
+  width: 70%;
+  display: flex;
+  
+}
+#campoDeBusca{
+  
+ 
+  align-content: center;
+  width: 50%;
+  height: 30px;
+  
+}
+#pesquisa{
+  height: 30px;
+  align-self: center;
+  background-color: white;
+  
+ 
+}
+hr{
+  margin: 10px;
+  width: 100%;
 }
 
 main {
   min-height: 80%;
   display: flex;
 }
+.menu-vertical ul{
+  display: grid;
+ grid-template-columns: 30% 1fr;
+ justify-items: center;
+ align-items: center;
+}
+.menu-vertical ul>img{
+  height: 20px;
+}
 
+.menu-vertical ul>li:hover{
+  background-color: thistle;
+  width: 100%;
+  cursor: pointer;
+}
+.menu-vertical ul>li{
+  justify-self: self-start;
+  font-size: 20px;
+}
 .menu-vertical {
   flex-basis: 200px;
   border-right-style: solid;
   border-right-width: thin;
+  padding: 20px;
 }
 
 .botoes-meunu-vertical {
@@ -42,6 +89,7 @@ main {
   display: grid;
   grid-template-columns: repeat(4, 24.8% 0.2%);
   grid-template-rows: repeat(4, 270px 20px);
+ 
 }
 
 .media1 {
@@ -93,8 +141,12 @@ main {
   border-width: thin; 
   align-items: start;
   justify-items: stretch;
+  max-width: 310px;
+ 
 }
-
+.box-pagina-principal:hover{
+  transform: scale(1.1);
+}
 
 footer {
   height: 10%;
