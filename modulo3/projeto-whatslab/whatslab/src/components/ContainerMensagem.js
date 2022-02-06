@@ -113,7 +113,7 @@ class ContainerMensagem extends React.Component{
                         return  <ContainerMessage 
                         
                         style={msg.nome=="eu"?{ alignSelf: "end"}:{ alignSelf: "start"}} key={index}>
-            <span>{msg.nome}</span>
+            <span style={msg.nome=="eu"?{display:"none"}:{display:"inline"}}>{msg.nome}</span>
             <p>{msg.texto}</p>
             
         </ContainerMessage>
