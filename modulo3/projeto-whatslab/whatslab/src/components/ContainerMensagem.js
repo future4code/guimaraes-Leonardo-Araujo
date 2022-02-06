@@ -66,7 +66,7 @@ class ContainerMensagem extends React.Component{
     state={
         inputNome :'',
         inputMsg :'',
-        mesagens:[{nome:"Maria",texto:"oi tudobem?"},{nome:"Leo",texto:"Bom dia?"}]
+        mesagens:[]
     }
 
     onChangeNome= (event)=>{
