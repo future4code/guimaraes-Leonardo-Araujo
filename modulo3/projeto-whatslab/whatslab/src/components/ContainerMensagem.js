@@ -107,7 +107,8 @@ class ContainerMensagem extends React.Component{
                 
                 {this.state.mesagens.map((msg,index)=>{
                     if((msg.msg!=="" && msg.texto!=="")  ){
-                        return  <ContainerMessage key={index}>
+                        return  <ContainerMessage 
+                        style={msg.nome=="eu"?{ alignSelf: "end"}:{ alignSelf: "start"}} key={index}>
             <span>{msg.nome}</span>
             <p>{msg.texto}</p>
             
