@@ -71,10 +71,23 @@ class ContainerMensagem extends React.Component{
 
     onChangeNome= (event)=>{
         this.setState({inputNome: event.target.value})
+        document.addEventListener("keyup",(event)=>{
+            if(event.key==="Enter"){
+               return this.onClckBotaõEnviar
+               
+            }
+        })
     }
     onChangeMsg= (event)=>{
         this.setState({inputMsg: event.target.value})
+        document.addEventListener("keyup",(e)=>{
+           if(e.key==="Enter"){
+            this.onClckBotaõEnviar()
+           }
+        })
+        
     }
+    
    
     onClckBotaõEnviar=()=>{
         let mensagensEviadas=[...this.state.mesagens]
@@ -85,23 +98,26 @@ class ContainerMensagem extends React.Component{
         console.log({mensagensEviadas})
         this.setState({inputNome: ''})
         this.setState({inputMsg:''})
+        
     }
-
     render(){
         return(
             
             <Container> 
+                
                 {this.state.mesagens.map((msg,index)=>{
-        return  <ContainerMessage key={index}>
+                    if((msg.msg!=="" && msg.texto!=="")  ){
+                        return  <ContainerMessage key={index}>
             <span>{msg.nome}</span>
             <p>{msg.texto}</p>
             
         </ContainerMessage>
+                    }
     })}
                 
                 <ContainerInput id="inputs">
                     <InputUsuario  id="nome"   placeholder="usuário" value={this.state.inputNome} onChange={this.onChangeNome}/>
-                    <InputMensagem placeholder="Mensagem" id="texto" value={this.state.inputMsg} onChange={this.onChangeMsg}/>
+                    <InputMensagem placeholder="Mensagem" id="texto" value={this.state.inputMsg}  onChange={this.onChangeMsg}/>
                     <ButtonEnviar href="#inputs" onClick={this.onClckBotaõEnviar}>Enviar</ButtonEnviar>
                 </ContainerInput>
             </Container>
