@@ -14,13 +14,13 @@ const Container=styled.div`
     display: flex;
     flex-direction: column;
     justify-content:flex-end;
-    background-color:#e1f5c4;
+    background-color:#d6c396;
    overflow:auto;
 `
 
 
 const ContainerMessage=styled.div`
-    background-color: #bfd6c7 ;
+    background-color: #b4dec1 ;
     border-radius: 10px;
     width:  max-content;
     margin: 10px ;
@@ -100,14 +100,18 @@ class ContainerMensagem extends React.Component{
         this.setState({inputMsg:''})
         
     }
+    
+     
+    
     render(){
         return(
             
             <Container> 
                 
                 {this.state.mesagens.map((msg,index)=>{
-                    if((msg.msg!=="" && msg.texto!=="")  ){
+                    if((msg!=="" && msg.texto!=="")  ){
                         return  <ContainerMessage 
+                        
                         style={msg.nome=="eu"?{ alignSelf: "end"}:{ alignSelf: "start"}} key={index}>
             <span>{msg.nome}</span>
             <p>{msg.texto}</p>
