@@ -1,5 +1,7 @@
 import  React from 'react';
 import styled from "styled-components"
+import axios from "axios"
+
 const Container=styled.div`
 border: 1px solid green;
 display: flex;
@@ -16,38 +18,54 @@ const BotaoApagar =styled.button`
     color: red;
     border: none;
 `
-
+const headers = {
+    headers: {
+      Authorization: "Leonardo-Santos-guimaraes"
+    }
+  }
+  const url="https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users"
 export default class Users extends React.Component{
     
         state = {
-            listaUsuarios: [],
+            listaUsuario :[],
             pageAtual: "listaUsers",
             idUsuario: "",
-            nome: ""
+            name: ""
           };
-
-
+          componentDidMount() {
+            axios.get(url, headers)
+                .then(response => {
+                    this.setState({
+                        listaUsuario: response.data
+                    })
+                })
+                .catch(error => {
+                    alert ("Erro ao buscar usuários")
+                })
+        }
+        getAllUsers = () => {
+            axios.get(url,headers)
+            const usuarios = this.state.listaUsuario.map(usuario => {
+                return (
+                    <li key={usuario.id}>
+                        {usuario.name}
+                        {usuario.email}
+                        <BotaoApagar >X</BotaoApagar>
+                    </li>
+                )
+            })
+            return usuarios
+        }
+          
+        
     render(){
         return(
             <Container>
              {this.state.pageAtual === "listaUsers" ? (
           <div>
             <ul>
-              {this.state.listaUsuarios.length === 0 && <div>Carregando...</div>}
-              {this.state.listaUsuarios.map(usuario => {
-                return (
-                  <li>
-                    <span >
-                      {usuario}
-                    </span>
-                    <BotaoApagar
-                      
-                    >
-                      X
-                    </BotaoApagar>
-                  </li>
-                );
-              })}
+            {this.state.listaUsuario.length === 0 && <div>Carregando...</div>}
+            {this.getAllUsers()}
             </ul>
             
           </div>

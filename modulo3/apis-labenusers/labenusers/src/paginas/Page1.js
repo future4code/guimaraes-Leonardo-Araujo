@@ -36,7 +36,7 @@ export default class Page1 extends React.Component{
       };
         console.log(`nome =  ${body.nome} email=  ${body.email}`)
       axios.post(url,body,headers).then((response)=>{
-          console.log(response.data)
+          
 
           alert(`Usuário ${this.state.nome} criado com sucesso!`)
                this.setState({ nome: "", email: "" })
