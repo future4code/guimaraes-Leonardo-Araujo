@@ -33,6 +33,9 @@ export default class Users extends React.Component{
             name: ""
           };
           componentDidMount() {
+            this.getAllUsers()
+        }
+        getAllUsers = () => {
             axios.get(url, headers)
                 .then(response => {
                     this.setState({
@@ -42,20 +45,35 @@ export default class Users extends React.Component{
                 .catch(error => {
                     alert ("Erro ao buscar usuários")
                 })
-        }
-        getAllUsers = () => {
-            axios.get(url,headers)
             const usuarios = this.state.listaUsuario.map(usuario => {
                 return (
                     <li key={usuario.id}>
                         {usuario.name}
                         {usuario.email}
-                        <BotaoApagar >X</BotaoApagar>
+                        <BotaoApagar onClick={() => this.deleteUser(usuario.id)} >X</BotaoApagar>
                     </li>
                 )
             })
             return usuarios
         }
+        deleteUser=usuarioId => {
+            if (window.confirm("Tem certeza que deseja apagar o usuário?")) {
+                console.log(usuarioId)
+              axios
+                .delete(
+                  `https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users/${usuarioId}`,
+                  headers
+                )
+                .then(() => {
+                  alert("Usuário apagado com sucesso!");
+                  this.getAllUsers();
+                })
+                .catch(e => {
+                  alert("ERRO AO APAGAR USUARIO");
+                  console.log(e.response)
+                });
+            }
+          };
           
         
     render(){
