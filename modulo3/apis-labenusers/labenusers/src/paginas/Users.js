@@ -17,6 +17,8 @@ const BotaoApagar =styled.button`
     margin-left: 20px;
     color: red;
     border: none;
+    height: 20px;
+    width: 30px;
 `
 const headers = {
     headers: {

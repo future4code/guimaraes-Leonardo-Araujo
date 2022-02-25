@@ -7,6 +7,19 @@ import  React  from 'react';
 const Container=styled.div`
   display: flex;
   flex-direction: column;
+  background-color: bisque;
+  button:hover{
+    background-color: yellowgreen;
+  }
+`
+const BotaoMudarTela=styled.button`
+  height: 40px;
+  width: 20vw;
+  margin: 20px 0;
+  background-color: aquamarine;
+  border: none;
+  box-shadow: 1px 4px black;
+  cursor: pointer;
 `
 class App extends React.Component {
 
@@ -24,7 +37,7 @@ class App extends React.Component {
     
   return (
     <Container>
-    <button onClick={this.onChangePage}>Trocar de  tela</button>
+    <BotaoMudarTela onClick={this.onChangePage}>Trocar de  tela</BotaoMudarTela>
     {this.state.paginaAtual === "Page1" ? <Page1 /> : <Users />}
     </Container>
   );
