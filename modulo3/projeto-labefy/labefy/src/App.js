@@ -2,7 +2,7 @@
 import './App.css';
 import Footer from './components/Footer';
 import Header from './components/Header.jsx';
-import MenuLateral from './components/MenuLateral';
+
 import React  from 'react';
 import styled  from 'styled-components';
 import MainMusicas from './components/MainMusicas';
@@ -19,7 +19,7 @@ export default class App extends React.Component {
      <>
        <Header />
        <ContainerMain>
-          <MenuLateral />
+         
           <MainMusicas />
        </ContainerMain>
        <Footer/>
