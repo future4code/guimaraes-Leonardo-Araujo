@@ -116,7 +116,7 @@ export default class CardMusica extends React.Component{
                }}>X</span>
                  <div className="musicas" >
                
-                
+                <button>Detalhes</button>
                 <h3>Músicas</h3>
                 {this.state.musicas.map((music)=>{
                     return <p key={music.id} >
