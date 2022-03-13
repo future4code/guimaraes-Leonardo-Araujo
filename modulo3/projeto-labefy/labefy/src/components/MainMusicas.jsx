@@ -103,7 +103,7 @@ onClickPlaylist=()=>{
         headers:{
         Authorization: "Leonardo-Santos-guimaraes"
     }}
-    if(this.state.pagina!=="playlists"){
+   
     this.setState({pagina:"playlists"})
     axios.get(url,headers).then((response)=>{
             this.setState({playlists: response.data.result.list })
@@ -111,12 +111,7 @@ onClickPlaylist=()=>{
         alert(error.response.data.message)
     })
     
-}else{
-    
-    
 
-       
-    }
 }
     render(){
         return(
@@ -141,7 +136,11 @@ onClickPlaylist=()=>{
             
             <ContainerMusicas>
                 {this.escolherTela()}
-              
+
+               
+               
+                
+               
             </ContainerMusicas>
             </Containe>
 
