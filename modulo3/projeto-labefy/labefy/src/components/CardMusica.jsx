@@ -41,9 +41,13 @@ max-width:400px ;
      text-align:start ;
      padding:20px ;
      
-     h3{
-         margin:10px;
-         text-align:center ;
+     button{
+        background-color: #25e4bc;
+        margin-bottom: 30px;
+        border: none;
+        border-radius: 20px;
+        cursor:pointer;
+
      }
      p{
          background-color: #b1485b;
@@ -98,14 +102,52 @@ export default class CardMusica extends React.Component{
         })
         this.props.atualizarPlaylist(id)
     }
-   
+    mostrarDetalhes=(name)=>{
+
+        
+        const musicas= document.querySelectorAll(`.${name}`)
+        
+        musicas.forEach((musica)=>{
+            
+            musica.classList.toggle('ocultar-musica')
+           
+        })
+    }
+    handleMusicas=()=>{
+        const nomeClasse=this.props.name
+       if(this.state.musicas.length!==0){
+           const musicas= this.state.musicas.map((music)=>{
+               
+               return <div className={`${nomeClasse} ocultar-musica`} key={music.id}>
+                 
+                   <p  >
+                   
+                  <strong>Musica:</strong> {music.name} - <strong>artista:</strong> {music.artist}</p>
+               </div>
+               })
+              
+               if(musicas.length!==undefined){
+                   return musicas
+               }else{
+                
+               }
+           
+           
+       }else{
+        return <div className={`${nomeClasse} ocultar-musica`}>
+            <h3>Sem musicas</h3>
+        </div>
+       }
+
+    }
     render(){
+        
         return(
                 
             <Container>
                 <div>
                 
-                <img src={this.props.img}/>
+                <img src={this.props.img} alt="musicas"/>
                 <h2>{this.props.name}</h2>
                 </div>
                 
@@ -115,14 +157,12 @@ export default class CardMusica extends React.Component{
                    this.deletePlaylist(this.props.id)
                }}>X</span>
                  <div className="musicas" >
-               
-                <button>Detalhes</button>
-                <h3>Músicas</h3>
-                {this.state.musicas.map((music)=>{
-                    return <p key={music.id} >
-                       <strong>Musica:</strong> {music.name} - <strong>artista:</strong> {music.artist}</p>
-                    })}
+            
+                 <button  onClick={()=>this.mostrarDetalhes(this.props.name)}>Detalhes </button>
                 
+                 
+                {this.handleMusicas()}
+                   
                 </div>
                
                

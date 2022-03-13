@@ -71,6 +71,8 @@ escolherTela=()=>{
             return (
                 this.state.playlists.map((playlist)=>{
                     return <CardMusica key={playlist.id} img={musicas} name={playlist.name} id={playlist.id}  atualizarPlaylist={this.atualizarPlaylist}/>
+                      
+                    
 
                 })
             ) 
