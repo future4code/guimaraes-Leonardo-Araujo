@@ -63,7 +63,14 @@ max-width:400px ;
  }
  
 `
+const ContainerAddMusica=styled.div`
+display: none;
+flex-direction: column;
 
+input{
+    margin-bottom: 10px;
+}
+`
 
 
 
@@ -113,6 +120,15 @@ export default class CardMusica extends React.Component{
            
         })
     }
+    mostrarAddMusica=(name)=>{
+        const formulario=document.getElementById(name)
+        if(formulario.style.display=="flex"){
+            formulario.style.display="none"
+        }else{
+            formulario.style.display="flex"
+
+        }
+    }
     handleMusicas=()=>{
         const nomeClasse=this.props.name
        if(this.state.musicas.length!==0){
@@ -157,6 +173,15 @@ export default class CardMusica extends React.Component{
                    this.deletePlaylist(this.props.id)
                }}>X</span>
                  <div className="musicas" >
+                   <button onClick={()=>this.mostrarAddMusica(this.props.name)}>Icluir musíca</button>
+               <ContainerAddMusica id={this.props.name}>
+
+                   
+                   <input  placeholder="nome"/>
+                   <input  placeholder="artista"/>
+                   <input  placeholder="URL"/>
+                   <button >Adicionar musíca</button>
+               </ContainerAddMusica>
             
                  <button  onClick={()=>this.mostrarDetalhes(this.props.name)}>Detalhes </button>
                 
