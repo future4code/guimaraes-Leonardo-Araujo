@@ -56,7 +56,11 @@ padding: 5px;
  
 `
 
-
+const Carregando=styled.div`
+width: 400px;
+height: 300px;
+background-color: aqua;
+`
 
 export default class MainMusicas extends React.Component{
 state={
@@ -77,7 +81,7 @@ escolherTela=()=>{
                 })
             ) 
             default:
-               return <p>houve um erro</p> 
+               return <Carregando>Carregando ....</Carregando> 
     
     }
 }
@@ -94,17 +98,25 @@ onClickNewPlaylist=()=>{
     this.setState({pagina:"criar lista"})
 }
 onClickPlaylist=()=>{
-    this.setState({pagina:"playlists"})
     const url="https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists"
     const headers={
         headers:{
         Authorization: "Leonardo-Santos-guimaraes"
     }}
+    if(this.state.pagina!=="playlists"){
+    this.setState({pagina:"playlists"})
     axios.get(url,headers).then((response)=>{
             this.setState({playlists: response.data.result.list })
     }).catch((error)=>{
         alert(error.response.data.message)
     })
+    
+}else{
+    
+    
+
+       
+    }
 }
     render(){
         return(

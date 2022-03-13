@@ -76,7 +76,10 @@ input{
 
 export default class CardMusica extends React.Component{
     state={
-        musicas:[]
+        musicas:[],
+        newMusicNome:"",
+        newMusicArtista:"",
+        newMusicUrl:""
     }
     componentDidMount(){
         this.getPlaylistTracks(this.props.id)
@@ -156,6 +159,54 @@ export default class CardMusica extends React.Component{
        }
 
     }
+    addTrackToPlaylist=(id,nome,artista,urlMusic)=>{
+        
+        const url=`https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/${id}/tracks`
+        const headers={
+            headers:{
+            Authorization: "Leonardo-Santos-guimaraes"
+        }}
+        const body={
+            "name":nome, 
+            "artist": artista,
+            "url": urlMusic
+        }
+        axios.post(url,body,headers).then((res)=>{
+            alert("Musica adicionada !")
+            this.setState({newMusicNome : '' })
+            this.setState({newMusicArtista : ""})
+            this.setState({newMusicUrl : ""})
+            
+            this.atualizarMusicas(id)
+
+        }).catch((error)=>{
+            console.log(error.response.data.message)
+
+        })
+
+
+    }
+    handleNeuMusicNome=(event)=>{
+        
+        this.setState({newMusicNome : event.target.value})
+        
+        console.log(this.state.newMusicNome)
+        
+    }
+    handleNeuMusicArtista=(event)=>{
+        this.setState({newMusicArtista : event.target.value})
+        console.log(this.state.newMusicArtista)
+        
+    }
+    handleNeuMusicUrl=(event)=>{
+        this.setState({newMusicUrl : event.target.value})
+        console.log(this.state.newMusicUrl)
+       
+    }
+    atualizarMusicas=(id)=>{
+        this.getPlaylistTracks(id)
+        this.mostrarDetalhes(this.props.name)
+    }
     render(){
         
         return(
@@ -177,10 +228,10 @@ export default class CardMusica extends React.Component{
                <ContainerAddMusica id={this.props.name}>
 
                    
-                   <input  placeholder="nome"/>
-                   <input  placeholder="artista"/>
-                   <input  placeholder="URL"/>
-                   <button >Adicionar musíca</button>
+                   <input  placeholder="nome" onChange={this.handleNeuMusicNome} value={this.state.newMusicNome}/>
+                   <input  placeholder="artista" onChange={this.handleNeuMusicArtista} value={this.state.newMusicArtista}/>
+                   <input  placeholder="URL" onChange={this.handleNeuMusicUrl} value={this.state.newMusicUrl}/>
+                   <button onClick={()=>this.addTrackToPlaylist(this.props.id,this.state.newMusicNome,this.state.newMusicArtista,this.state.newMusicUrl)}>Adicionar musíca</button>
                </ContainerAddMusica>
             
                  <button  onClick={()=>this.mostrarDetalhes(this.props.name)}>Detalhes </button>
