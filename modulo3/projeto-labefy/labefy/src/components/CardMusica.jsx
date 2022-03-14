@@ -132,6 +132,18 @@ export default class CardMusica extends React.Component{
 
         }
     }
+    tocarMusica=(url)=>{
+       
+        const finalUrl=url.length-1
+        const inicoUrl="https://www.youtube.com/embed/"
+       const nova= url.substr(16,finalUrl)
+       const novaUrl=inicoUrl+nova+"?autoplay=1"
+
+       window.open(novaUrl, '_blank');
+      
+        
+        
+    }
     handleMusicas=()=>{
         const nomeClasse=this.props.name
        if(this.state.musicas.length!==0){
@@ -139,7 +151,7 @@ export default class CardMusica extends React.Component{
                
                return <div className={`${nomeClasse} ocultar-musica`} key={music.id}>
                  
-                   <p  >
+                   <p   onClick={()=>this.tocarMusica(music.url)}>
                    
                   <strong>Musica:</strong> {music.name} - <strong>artista:</strong> {music.artist}</p>
                </div>
@@ -240,7 +252,7 @@ export default class CardMusica extends React.Component{
                 {this.handleMusicas()}
                    
                 </div>
-               
+                
                
             </Container>
 

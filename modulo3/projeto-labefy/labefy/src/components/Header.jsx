@@ -32,7 +32,7 @@ padding: 14px;
 `
 const Logo=styled.img`
     width: 10vw;
-    height: 10vh;
+    height: 18vh;
 
 `
 

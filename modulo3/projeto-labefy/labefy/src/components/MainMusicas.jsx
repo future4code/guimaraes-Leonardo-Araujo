@@ -5,6 +5,7 @@ import musicas from "../img/musicas.png"
 import CriarPlaylist from "./CriarPlaylist";
 import home from "../img/home.png"
 import playlist from "../img/playlist.png"
+import musicHome from "../img/musicaHome.jpg"
 import newPlaylist from "../img/adicionarPlaylist.png"
 import axios  from 'axios';
 
@@ -56,15 +57,20 @@ padding: 5px;
  
 `
 
-const Carregando=styled.div`
-width: 400px;
-height: 300px;
-background-color: aqua;
+const Home=styled.div`
+width: 100%
+;
+text-align: center;
+color: white;
+h1{
+    margin-bottom: 20px;
+}
+
 `
 
 export default class MainMusicas extends React.Component{
 state={
-    pagina:"playlists",
+    pagina:"",
     playlists:[]
 }
 escolherTela=()=>{
@@ -81,7 +87,10 @@ escolherTela=()=>{
                 })
             ) 
             default:
-               return <Carregando>Carregando ....</Carregando> 
+               return <Home>
+                    <h1> Bem vindo ao Labefy</h1>
+                    <img src={musicHome}  width="100%" alt=" musica"/>
+                   </Home> 
     
     }
 }
@@ -113,11 +122,14 @@ onClickPlaylist=()=>{
     
 
 }
+onclickHome=()=>{
+    this.setState({pagina: Home})
+}
     render(){
         return(
             <Containe>
             <Container>
-                <div>
+                <div  onClick={this.onclickHome}>
                     <img src={home}alt="home"/>
                     <p>Início</p>
                 </div>
