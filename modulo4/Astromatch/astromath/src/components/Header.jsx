@@ -5,6 +5,7 @@ const Container=styled.header`
 padding: 10px;
 text-align: center;
 font-size: 30px;
+margin-bottom: 20px;
 
 border-bottom: 1px solid #d1c3c3;
 height: 50px;

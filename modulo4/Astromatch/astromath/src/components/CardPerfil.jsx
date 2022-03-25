@@ -1,22 +1,31 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from 'styled-components'
 import agostinho from '../img/agostinho.jpg'
 
-const Container=styled.footer`
+const Container=styled.div`
 display: flex;
-background-image: url('${agostinho}') ;
-height: 50vh;
-justify-content: center;
-align-items: flex-end;
+;
+flex-direction: column;
+
+justify-content: flex-end;
+align-items: center;
 margin: 20px 0;
+img{
+    width: 400px;
+    height: 400px;
+    margin: 20px 0px;
+    
+}
 
 `
-export default ()=>{
+export default (props)=>{
+
+
     return(
         <Container>
-            <h3>Agostinho Carrara,38</h3>
-        <p>Humilde, trabalhador e interessado em oportunidades amorosas de longo prazo rs</p>
-            
+            <img src={props.usuario.photo}/>
+<h2>{`${props.usuario.name} , ${props.usuario.age}`}</h2>
+        <p>{props.usuario.bio}</p>
        </Container>
     )
 }
