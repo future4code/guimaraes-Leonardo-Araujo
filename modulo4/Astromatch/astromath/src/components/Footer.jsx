@@ -1,8 +1,7 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from 'styled-components'
 import coracao from '../img/coracao.png'
 import x from '../img/x.png'
-
 
 const Container=styled.footer`
 display: flex;

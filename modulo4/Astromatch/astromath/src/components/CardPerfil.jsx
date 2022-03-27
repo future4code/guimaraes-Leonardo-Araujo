@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styled from 'styled-components'
-import agostinho from '../img/agostinho.jpg'
+
 
 const Container=styled.div`
 display: flex;
@@ -19,13 +19,22 @@ img{
 
 `
 export default (props)=>{
+    const renderCard=()=>{
+        if(props.usuario){
+            return(
+                <>
+                    <img src={props.usuario.photo}/>
+                <h2>{`${props.usuario.name} , ${props.usuario.age}`}</h2>
+                <p>{props.usuario.bio}</p>
+                </>
+            )
+        }
+    }
 
 
     return(
         <Container>
-            <img src={props.usuario.photo}/>
-<h2>{`${props.usuario.name} , ${props.usuario.age}`}</h2>
-        <p>{props.usuario.bio}</p>
+            {renderCard()}
        </Container>
     )
 }
