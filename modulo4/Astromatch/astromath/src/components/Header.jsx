@@ -50,7 +50,7 @@ export default (props)=>{
     return(
         <Container id="lista-maches">
             <img id="botao-voltar" style={{float:"left"}} src={home} alt="Maches"  onClick={()=>mudarTela("inicial")}/>
-            <span><strong>Astro</strong>mach</span>
+            <span><strong>Astro</strong>match</span>
             <img id="botao-lista" style={{float:"right"}} src={maches} alt="Maches"  onClick={()=>mudarTela("lista")}/>
         </Container>
     )

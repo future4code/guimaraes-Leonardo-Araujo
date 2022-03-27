@@ -69,7 +69,7 @@ function App(props) {
       {escolheTela()}
 
       <Button variant="contained" color="primary" onClick={clearMaches}>
-      Limpar Maches
+      Limpar Matches
       </Button>
        
     </Container>
