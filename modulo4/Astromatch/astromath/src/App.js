@@ -2,10 +2,12 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import styled from 'styled-components'
 import './App.css';
-import CardPerfil from './components/CardPerfil';
-import coracao from './img/coracao.png'
-import x from './img/x.png'
+
+import Button from '@material-ui/core/Button';
+
 import Header from './components/Header';
+import ListaMaches from './pages.js/ListaMaches';
+import TelaInicial from './pages.js/TelaInicial';
 
 const Container=styled.div`
 width: 400px;
@@ -13,7 +15,7 @@ height: 90vh;
 border: 1px solid black;
 div{
   display: flex;
-justify-content: space-around;
+  justify-content: space-around;
 
 img.like{
     height: 50px;
@@ -29,51 +31,47 @@ button{
 
 
 function App(props) {
-  const [usuario,setUsuario]=useState({})
+  
+  const [tela,setTela]=useState("inicial")
 
   useEffect(()=>{
-    getProfileToChoose()
+    if(tela=="inicial"){
+      document.getElementById("botao-voltar").style.display="none"
+      setTela("inicial")
+    }
   },[])
- const getProfileToChoose=()=>{
-   axios.get("https://us-central1-missao-newton.cloudfunctions.net/astroMatch/Leonardo-Santos-guimaraes/person"
-   ).then((response)=>{
-      setUsuario(response.data.profile)
-    
-   }).catch((error)=>{
-     alert(error.response)
-
-   })
-   
- }
- const choosePerson=(id,choice)=>{
-  axios.post('https://us-central1-missao-newton.cloudfunctions.net/astroMatch/Leonardo-Santos-guimaraes/choose-person', {
-		id,
-		choice
-	}).then(()=>{
-      
-  }).catch((error)=>{
-    alert(error.response)
-  })
-  getProfileToChoose()
- }
+ 
  const clearMaches=()=>{
   axios.put('https://us-central1-missao-newton.cloudfunctions.net/astroMatch/Leonardo-Santos-guimaraes/clear').then(()=>{
     alert("listas de Maches  limpa !")
   }).catch((error)=>{
       alert(error.response.data)
   })
+  
+  
  }
+ 
+ const escolheTela=()=>{
+   switch(tela){
+     case"inicial":
+     return <TelaInicial />
+
+     case"lista":
+     return  <ListaMaches/>
+   }
+
+ }
+
   return (
     <Container >
-      <Header/>
-        <CardPerfil usuario={usuario}/>
-        <div>
-        <img src={x} className="like" onClick={()=>choosePerson(usuario.id,false)}
-/>
-        <img src={coracao} className="like" onClick={()=>choosePerson(usuario.id,true)}
-/>   
-        </div>  
-        <button  value=" Limpar Maches" onClick={clearMaches}>Limpar Maches</button>   
+      <Header setTela={setTela} tela={tela}/>
+      
+      {escolheTela()}
+
+      <Button variant="contained" color="primary" onClick={clearMaches}>
+      Limpar Maches
+      </Button>
+       
     </Container>
   );
 }
