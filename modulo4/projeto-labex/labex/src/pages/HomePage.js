@@ -1,15 +1,22 @@
+
 import react from "react";
-import Button from '@material-ui/core/Button';
+import { useNavigate } from "react-router-dom";
+
+
 
 export default ()=>{
-
+const navigate=useNavigate()
+const goToListTrips=()=>{
+    navigate('/ListTrips')
+}
+const goToLogin=()=>{
+    navigate('/login')
+}
     return(
         <>
         <h1>Labex</h1>
-        <Button variant="contained" color="primary">
-         Hello World
-        </Button>
-
+        <button onClick={goToListTrips}> Ver viagens</button>
+        <button onClick={goToLogin}>Área de Admin</button>
         </>
     )
 }

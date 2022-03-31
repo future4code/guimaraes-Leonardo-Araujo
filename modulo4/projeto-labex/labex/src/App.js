@@ -1,11 +1,15 @@
-import logo from './logo.svg';
+
+
 import './App.css';
-import HomePage from './pages/HomePage';
+import Router from './routes/Router';
+
+
+
 
 function App() {
   return (
     <div className="App">
-      <HomePage/>
+      <Router />
     </div>
   );
 }
