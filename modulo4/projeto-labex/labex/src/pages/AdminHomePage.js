@@ -1,7 +1,20 @@
-import react from "react";
+import axios from "axios";
+import react, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 export default ()=>{
     const navigate=useNavigate()
+
+    useEffect(()=>{
+        const token= localStorage.getItem("token")
+
+        if(token===null){
+            navigate('/login')
+        }
+    },[])
+    
+
+
+
     const goToBack=()=>{
         navigate(-1)
     }

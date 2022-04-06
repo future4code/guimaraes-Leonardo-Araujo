@@ -22,7 +22,7 @@ export default ()=>{
         
     }
     const login=()=>{
-        console.log(email,senha)
+        
         const body={
             "email": email,
             "password": senha
