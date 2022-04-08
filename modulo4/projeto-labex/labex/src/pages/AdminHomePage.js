@@ -43,6 +43,10 @@ export default ()=>{
     const goTocreatTrips=()=>{
         navigate('/createtrip')
     }
+    const goToDetailPage=(viagem)=>{
+        
+        navigate(`/tripdetail/${viagem}`)
+    }
     return(
         <>
         <h2>Painel administrativo</h2>
@@ -51,7 +55,7 @@ export default ()=>{
         <button onClick={goToLogin}>Logout</button>
         {viagens.map((viagem,i)=>{
                 return(
-                    <Card key={i}>
+                    <Card key={i} onClick={()=>{goToDetailPage(viagem)}}>
                         <h2>{viagem.name}</h2>
                         <span>X</span>
                     </Card>

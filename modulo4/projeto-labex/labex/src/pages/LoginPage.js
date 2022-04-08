@@ -33,16 +33,22 @@ export default ()=>{
             localStorage.setItem("token",response.data.token)
             goToAdmHome()
         }).catch((error)=>{
-            alert(error.response.data.message)
+            console.log(error.response.data.message)
         })
+    }
+    const handleClick=(e)=>{
+        e.preventDefaut()
     }
     return(
         <>
         <h2> Login</h2>
-        <input  placeholder="E-mail" value={email} onChange={handleEmail}/>
-        <input placeholder="senha" type="password" value={senha} onChange={handleSenha}/>
+        <form onSubmit={handleClick}>
+        <input name="email" type='email' placeholder="E-mail" value={email} onChange={handleEmail} required/>
+        <input name="senha" placeholder="senha" type="password" value={senha} onChange={handleSenha}  required/>
         <button onClick={goToBack}> Voltar</button>
         <button onClick={login}> Entrar </button>
+        </form>
+        
         </>
     )
 }

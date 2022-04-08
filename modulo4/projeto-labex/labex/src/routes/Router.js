@@ -17,7 +17,7 @@ const Router=()=>{
                 <Route path="login" element={<LoginPage/>}/>
                 <Route path="admhome" element={<AdminHomePage/>}/>
                 <Route path="createtrip" element={<CreateTripPage/>}/>
-                <Route path="tripdetail" element={<TripdetailPage/>}/>
+                <Route path="tripdetail/:id" element={<TripdetailPage/>}/>
                 
             </Routes>
         </BrowserRouter>
