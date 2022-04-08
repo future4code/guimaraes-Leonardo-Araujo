@@ -17,13 +17,15 @@ export default ()=>{
     return(
         <>
         <h2>Criar viagem</h2>
-        <input placeholder="nome"/>
-        <input placeholder="escolha planeta"/>
-        <input placeholder="data"/>
-        <input placeholder="descrição"/>
-        <input placeholder="duração em dias"/>
+        <form onSubmitCapture="">
+        <input placeholder="nome "required/>
+        <input placeholder="escolha planeta" required/>
+        <input placeholder="data" type="date" required/>
+        <input placeholder="descrição" required/>
+        <input placeholder="duração em dias" required/>
         <button onClick={goToBack}> Voltar</button>
         <button> criar </button>
+        </form>
         </>
     )
 }
