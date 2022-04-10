@@ -43,9 +43,9 @@ export default ()=>{
     const goTocreatTrips=()=>{
         navigate('/createtrip')
     }
-    const goToDetailPage=(viagem)=>{
+    const goToDetailPage=(id)=>{
         
-        navigate(`/tripdetail/${viagem}`)
+        navigate(`/tripdetail/${id}`)
     }
     return(
         <>
@@ -55,8 +55,8 @@ export default ()=>{
         <button onClick={goToLogin}>Logout</button>
         {viagens.map((viagem,i)=>{
                 return(
-                    <Card key={i} onClick={()=>{goToDetailPage(viagem)}}>
-                        <h2>{viagem.name}</h2>
+                    <Card key={i} onClick={()=>{goToDetailPage(viagem.id)}}>
+                        <h2>{viagem.planet}</h2>
                         <span>X</span>
                     </Card>
                 )

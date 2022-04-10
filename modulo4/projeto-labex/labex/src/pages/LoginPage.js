@@ -42,12 +42,12 @@ export default ()=>{
     return(
         <>
         <h2> Login</h2>
-        <form onSubmit={handleClick}>
+        
         <input name="email" type='email' placeholder="E-mail" value={email} onChange={handleEmail} required/>
         <input name="senha" placeholder="senha" type="password" value={senha} onChange={handleSenha}  required/>
         <button onClick={goToBack}> Voltar</button>
         <button onClick={login}> Entrar </button>
-        </form>
+       
         
         </>
     )
