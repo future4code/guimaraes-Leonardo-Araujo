@@ -21,8 +21,8 @@ export default ()=>{
         setSenha(event.target.value)
         
     }
-    const login=()=>{
-        
+    const login=(e)=>{
+       
         const body={
             "email": email,
             "password": senha
@@ -36,17 +36,17 @@ export default ()=>{
             console.log(error.response.data.message)
         })
     }
-    const handleClick=(e)=>{
-        e.preventDefaut()
-    }
+    
     return(
         <>
         <h2> Login</h2>
         
-        <input name="email" type='email' placeholder="E-mail" value={email} onChange={handleEmail} required/>
+        
+        <input name="email" type="email" placeholder="E-mail" value={email} onChange={handleEmail} required/>
         <input name="senha" placeholder="senha" type="password" value={senha} onChange={handleSenha}  required/>
         <button onClick={goToBack}> Voltar</button>
         <button onClick={login}> Entrar </button>
+        
        
         
         </>

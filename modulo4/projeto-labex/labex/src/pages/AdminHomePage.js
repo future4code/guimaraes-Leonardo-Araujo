@@ -3,13 +3,30 @@ import axios from "axios";
 import react, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styledComponents from "styled-components";
+
+
 const Card=styledComponents.div`
 display: flex;
 justify-content:space-between;
-background-color: red;
-padding: 20px;
+align-items:center;
+background-color: #d4ddd6;
+
 margin: 10px;
 border: 2px solid blue;
+
+span{
+    padding:20px
+    heigth:20%;
+    width: 20px;
+    background-color:red;
+    color:white;
+    cursor:pointer;
+    float:right;
+}
+h2{
+    
+    width:98%;
+}
 `
 export default ()=>{
     const navigate=useNavigate()
@@ -47,6 +64,22 @@ export default ()=>{
         
         navigate(`/tripdetail/${id}`)
     }
+    const deleteTrip=(viagemId)=>{
+        axios.delete(`https://us-central1-labenu-apis.cloudfunctions.net/labeX/Leonardo-Santos-guimaraes/trips/${viagemId}`,{
+            headers:{
+                auth:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ikxtd3ZhVnJXM2lzS09hZmFKeXJhIiwiZW1haWwiOiJsZW9zYW50b3NkZWFyYXVqb0BnbWFpbC5jb20iLCJpYXQiOjE2NDk2MzMxOTF9.Q8kHc2eWUqicPbMkV1iTyFJfORP0gPCQhhOZCA8Oz7o"
+            }
+        }).then((response)=>{
+           
+            alert("viagem deletada com sucesso")
+            navigate("/")
+            navigate("/admhome")
+            
+        }).catch((error)=>{
+            console.log(error.response)
+        })
+
+    }
     return(
         <>
         <h2>Painel administrativo</h2>
@@ -55,9 +88,9 @@ export default ()=>{
         <button onClick={goToLogin}>Logout</button>
         {viagens.map((viagem,i)=>{
                 return(
-                    <Card key={i} onClick={()=>{goToDetailPage(viagem.id)}}>
-                        <h2>{viagem.planet}</h2>
-                        <span>X</span>
+                    <Card key={i} >
+                        <h2 onClick={()=>{goToDetailPage(viagem.id)}}>{viagem.planet}</h2>
+                        <span onClick={()=>deleteTrip(viagem.id)}>X</span>
                     </Card>
                 )
         })}
