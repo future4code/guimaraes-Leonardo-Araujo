@@ -1,4 +1,4 @@
-//desafio 1
+//desafio 6
 const doisnumeros= (num1:number,num2:number):void=>{
   const maior:number=Math.max(num1,num2)
   
