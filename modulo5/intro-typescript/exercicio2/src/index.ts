@@ -1,12 +1,8 @@
-//exercicio 1
-
-function checaTriangulo(a:number, b:number, c:number):string {
-    if (a !== b && b !== c) {
-      return "Escaleno";
-    } else if (a === b && b === c) {
-      return "Equilátero";
-    } else {
-      return "Isósceles";
-    }
-  }
-  console.log(checaTriangulo(10,10,10))
+//exercicio 2
+function imprimeTresCoresFavoritas():void {
+  const cor1:string = process.argv[2]
+  const cor2:string = process.argv[3]
+  const cor3:string =process.argv[3]
+  console.log([cor1, cor2, cor3])
+}
+imprimeTresCoresFavoritas()
