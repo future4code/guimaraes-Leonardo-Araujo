@@ -6,8 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "exer1": "tsc && node ./build/index.js",
-    "exer2": "tsc && node ./build/exer2.js",
-    "exer3": "tsc && node ./build/exer2.js"
+    "exer2": "tsc && node ./build/exercicio2.js",
+    "exer3": "tsc && node ./build/exercicio3.js",
+    "exer4": "tsc && node ./build/exercicio4.js"
   },
   "keywords": [],
   "author": "",

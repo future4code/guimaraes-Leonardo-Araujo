@@ -34,3 +34,4 @@ const posts :post[]= [
       }
     )
   }
+  console.log(buscarPostsPorAutor(posts,"Dobby"))
