@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "clear && tsc && node ./build/index.js",
-    "exer2": "clear && tsc && node ./build/exercicio2.js"
+    "exer2": "clear && tsc && node ./build/exercicio2.js",
+    "exer3": "clear && tsc && node ./build/exercicio3.js"
   },
   "keywords": [],
   "author": "",
