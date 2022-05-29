@@ -11,7 +11,8 @@
     "exer4": "clear && tsc && node ./build/exercicio4.js",
     "exer5": "clear && tsc && node ./build/exercicio5.js",
     "exer6": "clear && tsc && node ./build/exercicio6.js",
-    "exer7": "clear && tsc && node ./build/exercicio7.js"
+    "exer7": "clear && tsc && node ./build/exercicio7.js",
+    "exer8": "clear && tsc && node ./build/exercicio8.js"
   },
   "keywords": [],
   "author": "",
