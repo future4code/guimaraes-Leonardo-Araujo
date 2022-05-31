@@ -1,0 +1,28 @@
+{
+  "name": "lista-typescript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "clear && tsc && node ./build/index.js",
+    "exer2": "clear && tsc && node ./build/exercicio2.js",
+    "exer3": "clear && tsc && node ./build/exercicio3.js",
+    "exer4": "clear && tsc && node ./build/exercicio4.js",
+    "exer5": "clear && tsc && node ./build/exercicio5.js",
+    "exer6": "clear && tsc && node ./build/exercicio6.js",
+    "exer7": "clear && tsc && node ./build/exercicio7.js",
+    "exer8": "clear && tsc && node ./build/exercicio8.js",
+    "exer9": "clear && tsc && node ./build/exercicio9.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "prompt-sync": "^4.2.0",
+    "typescript": "^4.7.2"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.36"
+  }
+}
