@@ -44,6 +44,8 @@ const users:User[]=[
     website:"https://carol.com.br"    
     }
 ]
+
+// exercicio 4
 const app= express()
 app.use(express.json())
 app.use(cors())
