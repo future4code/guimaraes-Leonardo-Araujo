@@ -20,14 +20,26 @@ const app= express()
 app.use(express.json())
 app.use(cors())
 
-app.get('/allPosts',(req: Request, res: Response)=>{
+app.get('/posts',(req: Request, res: Response)=>{
+   if(req.query.id){
+    const userPosts=usersPost.filter((user)=>{
+        return user.userId===Number(req.query.id)
+    })
+    res.status(200).send(userPosts)
+}else{
+ 
     try{
         res.status(200).send(usersPost)
-
-    }catch(error){
-        res.status(400).end("Erro ao buscar posts ")
-    }
+ 
+     }catch(error){
+         res.status(400).end("Erro ao buscar posts ")
+     }
+   }
+    
 })
+
+
+
 app.listen(3003, () => {
     console.log("Server is running in http://localhost:3003");
    })
