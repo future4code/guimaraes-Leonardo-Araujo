@@ -11,7 +11,7 @@ type Afazer = {
   completed: boolean
 }
 // exercício 3
-const afazeres: Afazer[] = [{
+let afazeres: Afazer[] = [{
   userId: generateId(),
   id: generateId(),
   title: "Lavar as louças",
@@ -41,16 +41,16 @@ app.post("/todos", (req: Request, res: Response) => {
 
   try {
     const authorization = req.headers.authorization
-    if (!authorization)throw new Error("Usuário não encontrado");
-    if(!req.body.title)throw new Error("informe  a tarefa !");
-    const newTarefa:Afazer ={userId:generateId(),id:generateId(),title:req.body.title,completed:req.body.completed}
+    if (!authorization) throw new Error("Usuário não encontrado");
+    if (!req.body.title) throw new Error("informe  a tarefa !");
+    const newTarefa: Afazer = { userId: generateId(), id: generateId(), title: req.body.title, completed: req.body.completed }
     afazeres.push(newTarefa)
 
     res.status(201).send(afazeres)
-    
-    
 
-}catch (error: any) {
+
+
+  } catch (error: any) {
     res.end(error.message)
   }
 
@@ -59,21 +59,37 @@ app.put("/todos/:id", (req: Request, res: Response) => {
 
   try {
     const authorization = req.headers.authorization
-    if (!authorization)throw new Error("Usuário não encontrado");
-    if(!req.params.id)throw new Error("insira o ID da tarefa");
-    const index=afazeres.findIndex((tarefa)=> tarefa.id===req.params.id)
-    afazeres[index].completed=!afazeres[index].completed
+    if (!authorization) throw new Error("Usuário não encontrado");
+    if (!req.params.id) throw new Error("insira o ID da tarefa");
+    const index = afazeres.findIndex((tarefa) => tarefa.id === req.params.id)
+    afazeres[index].completed = !afazeres[index].completed
     res.status(200).send(`status da tarefa ${afazeres[index].title} atualizado`)
-    
-    
-    
 
-}catch (error: any) {
+
+
+  } catch (error: any) {
     res.end(error.message)
   }
 
 })
+app.delete("/todos/:id", (req: Request, res: Response) => {
+  try {
+    const authorization = req.headers.authorization
+    if (!authorization) throw new Error("Usuário não encontrado");
+    if (!req.params.id) throw new Error("insira o ID da tarefa");
+    const index = afazeres.findIndex((tarefa) => tarefa.id === req.params.id)
+    afazeres.splice(index, 1)
+    res.status(200).send(`tarefa  deletada com sucesso !`)
+    
+   
+    
 
+
+
+  } catch (error: any) {
+    res.end(error.message)
+  }
+})
 
 
 
