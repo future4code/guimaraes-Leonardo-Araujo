@@ -55,7 +55,24 @@ app.post("/todos", (req: Request, res: Response) => {
   }
 
 })
+app.put("/todos/:id", (req: Request, res: Response) => {
 
+  try {
+    const authorization = req.headers.authorization
+    if (!authorization)throw new Error("Usuário não encontrado");
+    if(!req.params.id)throw new Error("insira o ID da tarefa");
+    const index=afazeres.findIndex((tarefa)=> tarefa.id===req.params.id)
+    afazeres[index].completed=!afazeres[index].completed
+    res.status(200).send(`status da tarefa ${afazeres[index].title} atualizado`)
+    
+    
+    
+
+}catch (error: any) {
+    res.end(error.message)
+  }
+
+})
 
 
 
