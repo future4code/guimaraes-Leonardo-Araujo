@@ -80,18 +80,29 @@ app.delete("/todos/:id", (req: Request, res: Response) => {
     const index = afazeres.findIndex((tarefa) => tarefa.id === req.params.id)
     afazeres.splice(index, 1)
     res.status(200).send(`tarefa  deletada com sucesso !`)
-    
-   
-    
+  } catch (error: any) {
+    res.end(error.message)
+  }
+})
+
+app.get("/todos/:userid", (req: Request, res: Response) => {
+  try {
+    const authorization = req.headers.authorization
+    if (!authorization) throw new Error("Usuário não encontrado");
+    if (!req.params.userid) throw new Error("insira o userID da tarefa");
+    const tarefas = afazeres.filter((tarefa) => {
+      return tarefa.userId === req.params.userid
+    })
+    res.status(200).send(tarefas)
+
 
 
 
   } catch (error: any) {
     res.end(error.message)
   }
+
 })
-
-
 
 
 const server = app.listen(process.env.PORT || 3003, () => {
