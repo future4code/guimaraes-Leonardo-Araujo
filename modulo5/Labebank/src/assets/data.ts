@@ -1,3 +1,4 @@
+
 import { Account } from "./types"
 export const users: Account[] = [
     {
@@ -63,7 +64,7 @@ export const users: Account[] = [
             date: new Date("2022/04/18"),
             description: "Saque"
         }]
-    },
-]
+    }
+    ]
 
 

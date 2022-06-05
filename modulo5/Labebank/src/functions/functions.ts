@@ -1,5 +1,5 @@
 import { Account } from "../assets/types"
-
+import { users } from '../assets/data'
 export function calcularIdade(nascimento: string):number {
     const d = new Date
     const anoAtual = d.getFullYear()
@@ -31,4 +31,5 @@ export function verificarCpf(cpf:number,users:Account[]):boolean{
         
         return result
 }
+
 
