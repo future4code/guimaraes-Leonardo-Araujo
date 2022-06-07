@@ -4,21 +4,21 @@ type Produto = {
    name: string,
    price: string
 }
-export const users: Produto[] = [
+export const products: Produto[] = [
    {
       id: generateId(),
       name: "Notebook",
-      price: "3599"
+      price: "3599,99"
    },
    {
       id: generateId(),
       name: "Televisão",
-      price: "4899"
+      price: "4899,99"
    },
    {
       id: generateId(),
       name: "monitor",
-      price: "1428"
+      price: "1428,99"
    },
 
 ];
