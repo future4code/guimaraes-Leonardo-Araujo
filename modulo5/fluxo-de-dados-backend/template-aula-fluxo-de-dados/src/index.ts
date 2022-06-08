@@ -37,7 +37,7 @@ app.post("/products", (req: Request, res: Response) => {
         res.status(201).send(productsList)
 
     } catch (error: any) {
-       
+
         switch (error.message) {
             case errors.Unauthorized.message:
                 res.status(errors.Unauthorized.status).send(errors.Unauthorized.message)
@@ -51,7 +51,18 @@ app.post("/products", (req: Request, res: Response) => {
         }
     }
 })
+app.get("/products", (req: Request, res: Response) => {
+    try {
+        if (!req.headers.auth) throw new Error(errors.Unauthorized.message)
 
+
+        res.status(201).send(productsList)
+
+    } catch (error: any) {
+        res.status(errors.Unauthorized.status).send(errors.Unauthorized.message)
+    }
+
+})
 app.listen(3003, () => {
     console.log("Servidor de pé na porta 3003")
 })
