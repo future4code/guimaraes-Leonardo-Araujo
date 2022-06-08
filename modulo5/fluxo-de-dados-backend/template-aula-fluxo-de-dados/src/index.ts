@@ -11,7 +11,7 @@ app.use(cors())
 let productsList = products
 const errors = {
     Unauthorized: { status: 401, message: "Por favor enviar headers Authorization !" },
-    UnprocessableEntity: { status: 422, message: "parâmetros inválidos ,verifique o body e tente novamente!" },
+    UnprocessableEntity: { status: 422, message: "parâmetros inválidos ,verifique  e tente novamente!" },
     InternalServerError: { status: 500, message: "Algo deu errado!" },
     NotFound: { status: 404, message: "Produto não encontrado!" },
 
@@ -77,7 +77,53 @@ app.put("/products/:id",(req: Request, res: Response)=>{
          res.status(200).send(productsList)
 
     } catch (error: any) {
-        res.status(errors.Unauthorized.status).send(error.message)
+        switch (error.message) {
+            case errors.Unauthorized.message:
+                res.status(errors.Unauthorized.status).send(errors.Unauthorized.message)
+                break;
+            case errors.UnprocessableEntity.message:
+                res.status(errors.UnprocessableEntity.status).send(errors.UnprocessableEntity.message)
+                break;
+            case errors.NotFound.message:
+                res.status(errors.UnprocessableEntity.status).send(errors.UnprocessableEntity.message)
+                break;
+            default:
+                res.status(errors.InternalServerError.status).send(errors.InternalServerError.message)
+
+        }
+    }
+})
+
+app.delete("/products/:id",(req: Request, res: Response)=>{
+    try {
+        
+        if (!req.headers.auth) throw new Error(errors.Unauthorized.message)
+        
+        const produto=productsList.find((product)=>{
+                return product.id===req.params.id
+        })
+        if(!produto)throw new Error(errors.NotFound.message)
+        const newArrayProducts=productsList.filter((product)=>{
+            return product!==produto
+        })
+        productsList=newArrayProducts
+         res.status(200).send(productsList)
+
+    } catch (error: any) {
+        switch (error.message) {
+            case errors.Unauthorized.message:
+                res.status(errors.Unauthorized.status).send(errors.Unauthorized.message)
+                break;
+            case errors.UnprocessableEntity.message:
+                res.status(errors.UnprocessableEntity.status).send(errors.UnprocessableEntity.message)
+                break;
+            case errors.NotFound.message:
+                res.status(errors.UnprocessableEntity.status).send(errors.UnprocessableEntity.message)
+                break;
+            default:
+                res.status(errors.InternalServerError.status).send(errors.InternalServerError.message)
+
+        }
     }
 })
 app.listen(3003, () => {
