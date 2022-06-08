@@ -10,9 +10,10 @@ app.use(express.json())
 app.use(cors())
 let productsList = products
 const errors = {
-    Unauthorized: { status: 401, message: "Por favor enviar Authorization !" },
-    UnprocessableEntity: { status: 422, message: "parâmetros inválidos ,verifique e tente novamente!" },
+    Unauthorized: { status: 401, message: "Por favor enviar headers Authorization !" },
+    UnprocessableEntity: { status: 422, message: "parâmetros inválidos ,verifique o body e tente novamente!" },
     InternalServerError: { status: 500, message: "Algo deu errado!" },
+    NotFound: { status: 404, message: "Produto não encontrado!" },
 
 
 }
@@ -54,14 +55,30 @@ app.post("/products", (req: Request, res: Response) => {
 app.get("/products", (req: Request, res: Response) => {
     try {
         if (!req.headers.auth) throw new Error(errors.Unauthorized.message)
-
-
         res.status(201).send(productsList)
 
     } catch (error: any) {
         res.status(errors.Unauthorized.status).send(errors.Unauthorized.message)
     }
 
+})
+app.put("/products/:id",(req: Request, res: Response)=>{
+    try {
+        
+        if (!req.headers.auth) throw new Error(errors.Unauthorized.message)
+        if (!req.body.price) throw new Error(errors.UnprocessableEntity.message)
+        if (typeof (req.body.price) !== "number" || req.body.price <= 0) throw new Error(errors.UnprocessableEntity.message)
+        const produto=productsList.find((product)=>{
+                return product.id===req.params.id
+        })
+        if(!produto)throw new Error(errors.NotFound.message)
+        const index=productsList.indexOf(produto)
+        productsList[index].price=req.body.price
+         res.status(200).send(productsList)
+
+    } catch (error: any) {
+        res.status(errors.Unauthorized.status).send(error.message)
+    }
 })
 app.listen(3003, () => {
     console.log("Servidor de pé na porta 3003")
