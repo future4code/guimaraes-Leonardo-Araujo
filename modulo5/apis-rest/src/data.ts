@@ -1,44 +1,55 @@
-export let users = [
+enum TYPE{
+   NORMAL="normal",
+   ADMIN="Admin"
+}
+type User={
+   id:number,
+   name:string,
+   email:string,
+   type:TYPE,
+   age:number
+}
+export let users:User[] = [
    {
        id: 1,
        name: "Alice",
        email: "alice@email.com",
-       type: "ADMIN",
+       type: TYPE.ADMIN,
        age: 12
    },
    {
        id: 2,
        name: "Bob",
        email: "bob@email.com",
-       type: "NORMAL",
+       type: TYPE.NORMAL,
        age: 36
    },
    {
        id: 3,
        name: "Coragem",
        email: "coragem@email.com",
-       type: "NORMAL",
+       type: TYPE.NORMAL,
        age: 21
    },
    {
        id: 4,
        name: "Dory",
        email: "dory@email.com",
-       type: "NORMAL",
+       type: TYPE.NORMAL,
        age: 17
    },
    {
        id: 5,
        name: "Elsa",
        email: "elsa@email.com",
-       type: "ADMIN",
+       type: TYPE.ADMIN,
        age: 17
    },
    {
        id: 6,
        name: "Fred",
        email: "fred@email.com",
-       type: "ADMIN",
+       type: TYPE.ADMIN,
        age: 60
    }
 ]
