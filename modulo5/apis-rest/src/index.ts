@@ -1,7 +1,7 @@
 import express from 'express'
 import cors from 'cors'
 import { Request, Response } from 'express'
-import { users } from './data'
+import { TYPE, users } from './data'
 import { v4 as generateId } from 'uuid'
 
 const app = express()
@@ -68,7 +68,39 @@ app.get("/users/:type", (req: Request, res: Response) => {
     }
 
 })
+app.put("/users",(req: Request, res: Response)=>{
+    try {
+        const {name,email,age,type}=req.body
+        
+        if (!req.headers.authorization) {
+            errorCode = 401
+            throw new Error("Por favor insira o authorization !")
+        }
+        if(!name|| !email || !age || !type){
+            errorCode = 422
+            throw new Error("requisição com parâmetros inválidos ou inexistentes !");
+        }
+    
+        if(!((type.toLowerCase()=="normal")|| ( type.toLowerCase()=="admin"))){
+            errorCode = 422
+            throw new Error("é aceito somente type normal e  admin!");
+        }
+        const newUser={
+            id: (users.length+1),
+            name,
+            email,
+            type :type.toLowerCase()=="normal"?TYPE.NORMAL:TYPE.ADMIN,
+            age
+        }
+        usersList.push(newUser)
+        
+        res.status(200).send(usersList)
 
+    } catch (error: any) {
+        res.status(errorCode).end(error.message)
+    }
+
+})
 
 
 

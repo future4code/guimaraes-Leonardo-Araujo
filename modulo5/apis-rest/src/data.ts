@@ -1,8 +1,8 @@
-enum TYPE{
+export enum TYPE{
    NORMAL="normal",
    ADMIN="Admin"
 }
-type User={
+export type User={
    id:number,
    name:string,
    email:string,
