@@ -15,16 +15,27 @@ let errorCode = 500
 // a- utilizamos o método GET
 // b- entidade : "/users"
 app.get("/users", (req: Request, res: Response) => {
-
     try {
+        let nome=req.query.name as String
+        
         if (!req.headers.authorization) {
             errorCode = 401
             throw new Error("Por favor insira o authorization !")
         }
+        if(nome){
+            let user=usersList.filter(u=>u.name.toLowerCase()=== nome.toLowerCase() )
+            if(!user.length){
+                errorCode=422
+                throw new Error("Usuário não encontrado");
+                
+            }
+            res.status(200).send(user)            
+
+        }
         res.status(200).send(usersList)
 
     } catch (error: any) {
-        res.status(errorCode).end(error.message)
+        res.status(errorCode).send(error.message)
     }
 
 })
@@ -33,7 +44,7 @@ app.get("/users", (req: Request, res: Response) => {
 // b- utilizei um enum para limitar os valores aceitos 
 app.get("/users/:type", (req: Request, res: Response) => {
     const type=req.params.type.trim()
-    console.log(type)
+    
     try {
         if (!req.headers.authorization) {
             errorCode = 401
@@ -57,6 +68,7 @@ app.get("/users/:type", (req: Request, res: Response) => {
     }
 
 })
+
 
 
 
