@@ -27,13 +27,37 @@ app.post("/signup", (req: Request, res: Response) => {
   }
 })
 app.get("/users", (req: Request, res: Response) => {
+  let errorCode = 500
+  const authorization = req.headers.auth
+  const { name, cpf } = req.query
+
   try {
-    const authorization = req.headers.auth
     if (!authorization) throw new Error("Usuário não autorizado")
-    res.status(200).send(users)
+
+    if (Object.keys(req.query).length === 0) res.status(200).send(users)
+    if (!name || !cpf) {
+      errorCode = 422
+      throw new Error("Requisição comparametros inválidos !")
+    }
+    let cpfconvert=Number(cpf)
+   
     
+    if (typeof (name) !== "string" || !cpfconvert ) {
+      errorCode = 422
+      throw new Error("Requisição comparametros inválidos, verifique os dados  e trente novamente !")
+    }
+
+    const user = users.find(user => (user.name === name && user.cpf=== cpfconvert  ))
+    if(!user){
+      errorCode=404
+      throw new Error("Usuário não encontrado");
+      
+    }
+  
+    res.status(200).send(`Olá ${user.name} seu saldo é RS ${user.balance.toFixed(2)}`)
+
   } catch (error: any) {
-    res.status(400).end(error.message)
+    res.status(errorCode).send(error.message)
   }
 })
 

@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "clear && tsc && node ./build/index.js",
-    "dev-ex": "clear && nodemon src/index.ts"
+    "dev": "clear && nodemon src/index.ts"
   },
   "keywords": [],
   "author": "",
