@@ -61,23 +61,23 @@ app.get("/users", (req: Request, res: Response) => {
   }
 })
 app.put("/users", (req: Request, res: Response) => {
-  const { cpf, value, bill, date ,description} = req.query
+  const { cpf, value, bill, date ,description,cpfRecipient,nameRecipient,tranferValue,name} = req.query
   const authorization = req.headers.auth
   let cpfConvert = Number(cpf)
   const user = users.find(user => user.cpf === cpfConvert)
   try {
     if (!authorization) throw new Error("Usuário não autorizado")
-    if (!bill) {
-
+    if (!bill&& !tranferValue) {
       if (!cpf || !value) {
         errorCode = 422
-        throw new Error("Requisição comparametros inválidos, verifique os dados  e trente novamente !")
+        throw new Error("Requisição comparametros inválidos, verifique os dados  e tente novamente !")
       }
-
       const valueConvert = Number(value)
+
+
       if (!valueConvert) {
         errorCode = 422
-        throw new Error("Requisição comparametros inválidos, verifique os dados  e trente novamente !")
+        throw new Error("Requisição comparametros inválidos, verifique os dados  e tente novamente !")
       }
 
       if (!user) {
@@ -86,10 +86,10 @@ app.put("/users", (req: Request, res: Response) => {
       }
       user.balance += valueConvert
       res.status(200).send("Depósito efetuado com sucesso !")
-    } else {
+    } else if(bill &&!tranferValue) {
       if (bill === '' || !cpf || !description) {
         errorCode = 422
-        throw new Error("Requisição comparametros inválidos, verifique os dados  e trente novamente !")
+        throw new Error("Requisição comparametros inválidos, verifique os dados  e tente novamente !")
       }
       if (!user) {
         errorCode = 404
@@ -133,6 +133,7 @@ app.put("/users", (req: Request, res: Response) => {
           }
           data = new Date(`${ano}-${mes}-${dia}`)
 
+
         }
       }
       const saldo=(user.balance- Number(bill))
@@ -144,18 +145,50 @@ app.put("/users", (req: Request, res: Response) => {
       }else{
         const descricao=description as string
         user.balance=saldo
+        data.setDate(data.getDate()+1)
         user.BankStatement.push({
-          value:+bill,
+          value:Number(bill),
           date: data.toLocaleDateString(),
           description: descricao
         })
         
       }
-      console.log(data)
-      console.log(data.toLocaleDateString())
+      
       res.status(200).send("Conta paga com sucesso !")
 
 
+    }else{
+      if(!name ||!tranferValue||!cpfRecipient||!nameRecipient||!cpf){
+        errorCode=422
+        throw new Error("Requisição comparametros inválidos, verifique os dados  e tente novamente !!!");
+        
+      }
+      if (!user) {
+        errorCode = 404
+        throw new Error("Usuário não encontrado");
+      }
+      const cpfRecipientConvert=Number(cpfRecipient)
+      const destinatario=users.find(user=>(user.cpf===cpfRecipientConvert && user.name===nameRecipient))
+      if (!destinatario) {
+        errorCode = 404
+        throw new Error("Conta  do destinatário  não encontrado");
+      }
+      const saldo= user.balance-(+tranferValue)
+      if(saldo<0){
+        errorCode=400
+        throw new Error("Saldo insuficiente para realizar o pagamento!");
+      }else{
+        user.balance=saldo
+        destinatario.balance+=Number(tranferValue)
+        user.BankStatement.push({
+          value:Number(tranferValue),
+          date: new Date().toLocaleDateString(),
+          description: `Transferência para ${destinatario.name}`
+        })
+        res.status(200).send("Transferência efetuada com sucesso !")
+        
+      }
+      
     }
 
   } catch (error: any) {
