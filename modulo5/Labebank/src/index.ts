@@ -9,6 +9,7 @@ import { Account } from "./assets/types"
 const app = express()
 app.use(express.json())
 app.use(cors())
+let errorCode = 500
 
 app.post("/signup", (req: Request, res: Response) => {
   try {
@@ -27,7 +28,6 @@ app.post("/signup", (req: Request, res: Response) => {
   }
 })
 app.get("/users", (req: Request, res: Response) => {
-  let errorCode = 500
   const authorization = req.headers.auth
   const { name, cpf } = req.query
 
@@ -39,15 +39,15 @@ app.get("/users", (req: Request, res: Response) => {
       errorCode = 422
       throw new Error("Requisição comparametros inválidos !")
     }
-    let cpfconvert=Number(cpf)
+    let cpfConvert=Number(cpf)
    
     
-    if (typeof (name) !== "string" || !cpfconvert ) {
+    if (typeof (name) !== "string" || !cpfConvert ) {
       errorCode = 422
       throw new Error("Requisição comparametros inválidos, verifique os dados  e trente novamente !")
     }
 
-    const user = users.find(user => (user.name === name && user.cpf=== cpfconvert  ))
+    const user = users.find(user => (user.name === name && user.cpf=== cpfConvert  ))
     if(!user){
       errorCode=404
       throw new Error("Usuário não encontrado");
@@ -60,7 +60,33 @@ app.get("/users", (req: Request, res: Response) => {
     res.status(errorCode).send(error.message)
   }
 })
-
+app.put("/users",(req: Request, res: Response) =>{
+  const {cpf,value}=req.query
+  try {
+    const authorization = req.headers.auth
+    if (!authorization) throw new Error("Usuário não autorizado")
+    if (!cpf || !value){
+      errorCode=422
+      throw new Error("Requisição comparametros inválidos, verifique os dados  e trente novamente !")
+    }
+    let cpfConvert=Number(cpf)
+    const valueConvert=Number(value)
+    if(!valueConvert){
+      errorCode=422
+      throw new Error("Requisição comparametros inválidos, verifique os dados  e trente novamente !")
+    }
+    const user=users.find(user => user.cpf===cpfConvert)
+    if(!user){
+      errorCode=404
+      throw new Error("Usuário não encontrado");
+    }
+    user.balance+=valueConvert
+    res.status(200).send("Depósito efetuado com sucesso !")
+    
+  } catch (error: any) {
+    res.status(errorCode).end(error.message)
+  }
+})
 
 
 
