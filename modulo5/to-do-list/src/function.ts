@@ -36,3 +36,26 @@ export const getUserId = async (id: string): Promise<any> => {
         return error.message
     }
 }
+export const editUser=async(body:newUser):Promise<any>=>{
+    const {id,name,nickname,email}=body
+    try{
+        const result =await connection("TodoListUser")
+        .update({
+            name,
+            nickname,
+            email
+            
+        }).where({
+            id
+        })
+        if(result){
+            return true
+        }else{
+            return false
+        }
+
+    }catch(error:any){
+        return error.message
+
+    }
+}
