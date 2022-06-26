@@ -6,3 +6,10 @@ export type newUser={
     nickname:string,
     email:string
 }
+export type Task={
+    id:string,
+    title:string,
+	description:string,
+	limitDate:string ,
+	creatorUserId:string
+}

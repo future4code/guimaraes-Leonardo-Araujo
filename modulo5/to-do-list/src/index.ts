@@ -2,7 +2,7 @@ import app from './app'
 import connection from './connection'
 import { Request, Response } from "express"
 import { v4 as generateId } from 'uuid'
-import { createUser, editUser, getUserId } from './function';
+import { createTask, createUser, editUser, getUserId } from './function';
 import { newUser } from './types';
 
 let errorCode = 500
@@ -64,7 +64,7 @@ app.get("/user/:id", async (req: Request, res: Response) => {
 		res.status(errorCode).send(error.message)
 	}
 })
-app.put("/user/:id", async (req: Request, res: Response) =>{
+app.put("/user/edit/:id", async (req: Request, res: Response) =>{
 	const authorization = req.headers.authorization
 	const {name,nickname,email}=req.body
 	const { id } = req.params
@@ -91,6 +91,37 @@ app.put("/user/:id", async (req: Request, res: Response) =>{
 
 
 	} catch (error: any) {
+		res.status(errorCode).send(error.message)
+	}
+})
+app.post("/task",async (req: Request, res: Response) =>{
+	const authorization = req.headers.authorization
+	const {title,description,limitDate,creatorUserId}=req.body
+	try{
+		if (!authorization) {
+			errorCode = 401
+			throw new Error("Usuario não autorizado")
+		}
+		if(!title||!description||!limitDate||!creatorUserId){
+			errorCode = 400
+			throw new Error("Solicitação Inválida")
+		}
+		const newTask={
+			id:generateId(),
+			title,
+			description,
+			limitDate,
+			creatorUserId
+		}
+		const result= await createTask(newTask)
+		if(result){
+			res.status(200).send("Tarefa criada com sucesso !")
+		}else{
+			throw new Error("Algo deu errado");
+			
+		}
+
+	}catch(error:any){
 		res.status(errorCode).send(error.message)
 	}
 })
