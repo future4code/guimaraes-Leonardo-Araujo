@@ -2,7 +2,7 @@ import app from './app'
 import connection from './connection'
 import { Request, Response } from "express"
 import { v4 as generateId } from 'uuid'
-import { createUser } from './function';
+import { createUser, getUserId } from './function';
 import { newUser } from './types';
 
 let errorCode = 500
@@ -26,17 +26,41 @@ app.post("/user", async (req: Request, res: Response) => {
 			nickname,
 			email
 		}
-		 
-		 if(await createUser(newUser)){
-			 res.send("Usuario criado com sucesso!")
 
-		 }else{
+		if (await createUser(newUser)) {
+			res.send("Usuario criado com sucesso!")
+
+		} else {
 			throw new Error("Unexpected error")
-		 }
+		}
 
 	} catch (error: any) {
-		
-		res.status(500).send(error.message)
+
+		res.status(errorCode).send(error.message)
 	}
 
+})
+
+app.get("/user/:id", async (req: Request, res: Response) => {
+	const authorization = req.headers.authorization
+	const { id } = req.params
+
+	try {
+		if (!authorization) {
+			errorCode = 401
+			throw new Error("Usuario não autorizado")
+		}
+		if (req.params.id.trim() === ":id" || !req.params.id.trim()) {
+			errorCode = 400
+			throw new Error("Solicitação Inválida")
+		}
+		const result = await getUserId(id)
+
+		if (!result) throw new Error("Usuário não encontrado")
+		res.status(200).send(result[0])
+
+
+	} catch (error: any) {
+		res.status(errorCode).send(error.message)
+	}
 })

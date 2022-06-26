@@ -3,7 +3,7 @@ import { newUser } from "./types"
 export const createUser = async (body: newUser): Promise<any> => {
     const { id, name, nickname, email } = body
     try {
-        const result =await  connection("TodoListUser")
+        const result = await connection("TodoListUser")
             .insert({
                 id,
                 name,
@@ -11,9 +11,28 @@ export const createUser = async (body: newUser): Promise<any> => {
                 email
 
             })
-            return result 
+        return result
 
     } catch (error: any) {
         return false
+    }
+}
+export const getUserId = async (id: string): Promise<any> => {
+    try {
+        const result = await connection("TodoListUser")
+            .select("id", "nickname")
+            .where({
+                id
+            })
+        if (!result[0]) {
+            return false
+
+        } else {
+            return result
+
+        }
+
+    } catch (error: any) {
+        return error.message
     }
 }
