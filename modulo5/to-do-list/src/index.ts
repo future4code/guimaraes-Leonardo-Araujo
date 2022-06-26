@@ -2,7 +2,7 @@ import app from './app'
 import connection from './connection'
 import { Request, Response } from "express"
 import { v4 as generateId } from 'uuid'
-import { createTask, createUser, editUser, getUserId } from './function';
+import { createTask, createUser, editUser, getTask, getUserId } from './function';
 import { newUser } from './types';
 
 let errorCode = 500
@@ -122,6 +122,29 @@ app.post("/task",async (req: Request, res: Response) =>{
 		}
 
 	}catch(error:any){
+		res.status(errorCode).send(error.message)
+	}
+})
+app.get("/task/:id",async (req: Request, res: Response) =>{
+	const authorization = req.headers.authorization
+	const { id } = req.params
+
+	try {
+		if (!authorization) {
+			errorCode = 401
+			throw new Error("Usuario não autorizado")
+		}
+		if (req.params.id.trim() === ":id" || !req.params.id.trim()) {
+			errorCode = 400
+			throw new Error("Solicitação Inválida")
+		}
+		const result = await getTask(id)
+
+		if (!result) throw new Error("Usuário não encontrado")
+		res.status(200).send(result[0])
+
+
+	} catch (error: any) {
 		res.status(errorCode).send(error.message)
 	}
 })

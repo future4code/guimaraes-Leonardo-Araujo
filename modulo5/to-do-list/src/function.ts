@@ -99,3 +99,22 @@ export const createTask= async (body:Task):Promise<any>=>{
         return false
     }
 }
+export const getTask=async(id:string):Promise<any>=>{
+    try {
+        const result = await connection.raw(`
+        select TodoListTask.title,TodoListUser.name from TodoListTask 
+        join TodoListUser on TodoListUser.id=TodoListTask.creator_user_id;
+        `)
+            
+        if (!result[0]) {
+            return false
+
+        } else {
+            return result
+
+        }
+
+    } catch (error: any) {
+        return error.message
+    }
+}
