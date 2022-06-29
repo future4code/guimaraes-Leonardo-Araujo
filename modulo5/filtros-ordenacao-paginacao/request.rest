@@ -8,7 +8,7 @@ GET http://localhost:3003/users/cx
 GET http://localhost:3003/users3?sort&order=asc
 ###
 // paginação
-GET http://localhost:3003/recipes?size=6&page=1
+GET http://localhost:3003/users4?page=1
 ###
 // todos juntos
 GET http://localhost:3003/recipes?title=sopa&sort=title&order=ASC&size=1&page=1
