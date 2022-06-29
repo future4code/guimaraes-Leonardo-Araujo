@@ -2,10 +2,10 @@
 GET http://localhost:3003/users?name=j
 ###
 // filtro
-GET http://localhost:3003/users/:type=Operations
+GET http://localhost:3003/users/cx
 ###
 // ordenação
-GET http://localhost:3003/recipes?sort=title&order=DESC
+GET http://localhost:3003/users3?sort&order=asc
 ###
 // paginação
 GET http://localhost:3003/recipes?size=6&page=1

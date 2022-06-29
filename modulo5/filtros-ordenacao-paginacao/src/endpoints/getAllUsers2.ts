@@ -13,7 +13,7 @@ export const getAllUserstype = async(req: Request,res: Response): Promise<void> 
     let statusCode=500
   try {
     let type=req.params.type as string 
-    console.log(type)
+    
     if(!type || type==":type"|| type===":type="){
       statusCode=400
       throw new Error(" type não informado")
@@ -29,6 +29,6 @@ export const getAllUserstype = async(req: Request,res: Response): Promise<void> 
      
   } catch (error:any) {
      console.log(error)
-     res.send(error.message || error.sqlMessage)
+     res.status(statusCode).send(error.message || error.sqlMessage)
   }
 }
