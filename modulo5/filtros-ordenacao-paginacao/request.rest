@@ -1,0 +1,14 @@
+// padrão
+GET http://localhost:3003/users?name=j
+###
+// filtro
+GET http://localhost:3003/users/cx
+###
+// ordenação
+GET http://localhost:3003/users3?sort&order=asc
+###
+// paginação
+GET http://localhost:3003/users4?page=3
+###
+// todos juntos
+GET http://localhost:3003/users5?name=chi&sort=name&order=ASC&&page=1
