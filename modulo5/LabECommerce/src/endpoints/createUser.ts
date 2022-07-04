@@ -18,7 +18,7 @@ export const createUser = async (req: Request, res: Response): Promise<any> => {
     const { name, email, password } = req.body
     let statusCode = 500
     try {
-        console.log(typeof(name))
+        
         if (!name || !email || !password) {
             statusCode = 400
             throw new Error("Bad Request");
@@ -33,7 +33,7 @@ export const createUser = async (req: Request, res: Response): Promise<any> => {
         const result = await createNewUser(body)
        if(result[0]===0) res.status(201).send("user created successfully !")
     } catch (error:any) {
-        res.send(error.sqlMessage)
+        res.status(statusCode).send(error.sqlMessage)
     }
 
 }

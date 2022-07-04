@@ -4,3 +4,9 @@ export type user={
     email:string,
     password:string
 }
+export type product={
+    id:string,
+    name:string,
+    price:string,
+    imageUrl:string
+}
