@@ -18,10 +18,12 @@ export const createUser = async (req: Request, res: Response): Promise<any> => {
     const { name, email, password } = req.body
     let statusCode = 500
     try {
+        console.log(typeof(name))
         if (!name || !email || !password) {
             statusCode = 400
             throw new Error("Bad Request");
         }
+        
         const body = {
             id: generateId(),
             name,
