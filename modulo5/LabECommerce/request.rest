@@ -9,13 +9,24 @@ Content-Type: application/json
 }
 ###
 GET http://localhost:3003/users
+###
+GET http://localhost:3003/products
 
 ###
 POST http://localhost:3003/products
 Content-Type: application/json
 
 {
-    "name":"ppp",
-    "price": "marc@gmail.com",
-    "image_url":"548965sdi2368"
+    "name":"Smart Speaker ",
+    "price": 229.00,
+    "imageUrl":"https://imgs.casasbahia.com.br/55011348/1xg.jpg"
+}
+###
+POST http://localhost:3003/purchases
+Content-Type: application/json
+
+{
+    "user_id":"263cd3d8-74d9-4a79-95e2-e8170e3f5f96",
+    "product_id": "6e02b498-022f-41ed-9256-14f217361d83",
+    "quantity": 111
 }
