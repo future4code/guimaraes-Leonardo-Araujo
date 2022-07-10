@@ -28,5 +28,7 @@ Content-Type: application/json
 {
     "user_id":"263cd3d8-74d9-4a79-95e2-e8170e3f5f96",
     "product_id": "6e02b498-022f-41ed-9256-14f217361d83",
-    "quantity": 111
+    "quantity": 16
 }
+###
+GEt http://localhost:3003/users/:263cd3d8-74d9-4a79-95e2-e8170e3f5f96/purchases
