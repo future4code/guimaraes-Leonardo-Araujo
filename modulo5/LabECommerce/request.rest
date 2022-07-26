@@ -1,0 +1,34 @@
+// padrão
+POST  http://localhost:3003/users
+Content-Type: application/json
+
+{
+    "name":10,
+    "email": "marc@gmail.com",
+    "password":"548965sdi2368"
+}
+###
+GET http://localhost:3003/users
+###
+GET http://localhost:3003/products
+
+###
+POST http://localhost:3003/products
+Content-Type: application/json
+
+{
+    "name":"Smart Speaker ",
+    "price": 229.00,
+    "imageUrl":"https://imgs.casasbahia.com.br/55011348/1xg.jpg"
+}
+###
+POST http://localhost:3003/purchases
+Content-Type: application/json
+
+{
+    "user_id":"263cd3d8-74d9-4a79-95e2-e8170e3f5f96",
+    "product_id": "6e02b498-022f-41ed-9256-14f217361d83",
+    "quantity": 16
+}
+###
+GEt http://localhost:3003/users/:263cd3d8-74d9-4a79-95e2-e8170e3f5f96/purchases
