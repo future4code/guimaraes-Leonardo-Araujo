@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { UserBusiness } from "../business/UserBusiness";
-import { UserInputDTO } from "../model/UserinputDTO";
+import { UserInputDTO } from "../model/UserInputDTO";
 
 export class UserController {
   async create(req: Request, res: Response):Promise<void> {
