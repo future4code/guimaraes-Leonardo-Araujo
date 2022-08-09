@@ -1,0 +1,35 @@
+POST  http://localhost:3003/user/create
+Content-Type: application/json
+
+{
+    "name": "Paty Oliveira",
+    "email": "anpatya@gmail.com",
+    "password":"78855"
+}
+
+###
+GET  http://localhost:3003/post/b3e7babd-9e0c-492a-a99c-d5eae0c5eebb
+
+###
+POST  http://localhost:3003/post/create
+Content-Type: application/json
+
+{
+    "photo": "vsksnbsndbkonbokbn",
+    "description":"teste",
+    "type":"normal",
+    "authorId":"2a2c4827-f0d8-4138-8e92-4375577f4e12"
+}
+
+
+###
+POST  http://localhost:3003/friendships/create
+Content-Type: application/json
+
+{
+    "userId": "022acb42-0c91-440a-a3be-44a0c87845b8",
+    "friendId":"2a2c4827-f0d8-4138-8e92-4375577f4e12"
+    
+}
+
+
