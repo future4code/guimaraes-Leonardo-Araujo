@@ -1,8 +1,8 @@
 import { Request, Response } from "express";
 import { PostBusiness } from "../business/PostBusiness";
-import { PostDatabase } from "../data/PostDataBase";
+
 import { PostNotfound } from "../error/PostNotFound";
-import { PostInputDTO } from "../model/PostinputDTO";
+import { PostInputDTO } from "../model/PostInputDTO";
 import { generatedId } from "../service/generateId";
 
 export class PostController {

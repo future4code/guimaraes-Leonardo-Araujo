@@ -1,5 +1,6 @@
 import { UserDatabase } from "../data/UserDataBase"
-import { InvalidRequest } from "../error/InvalidRequest"
+import { InvalidRequest } from "../error/InvalidRequestPost"
+
 import { UserInputDTO } from "../model/UserInputDTO"
 
 

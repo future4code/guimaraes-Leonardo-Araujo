@@ -1,4 +1,4 @@
-import { PostInputDTO } from "../model/PostinputDTO";
+import { PostInputDTO } from "../model/PostInputDTO";
 import { BaseDatabase } from "./BaseDataBase";
 
 export class PostDatabase extends BaseDatabase {
@@ -16,8 +16,8 @@ export class PostDatabase extends BaseDatabase {
       .into(PostDatabase.TABLE_NAME);
   }
   async get(id:string): Promise<any> {
-    const result=await PostDatabase.connection(PostDatabase.TABLE_NAME).where({id})
-    return result
+     const result=await PostDatabase.connection(PostDatabase.TABLE_NAME).where({id})
+     return result
 }
   
 }

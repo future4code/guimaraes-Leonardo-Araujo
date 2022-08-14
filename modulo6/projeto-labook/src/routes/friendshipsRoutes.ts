@@ -9,3 +9,5 @@ const friendshipsController = new FriendShipsController()
 
 
 friendshipsRouter.post("/create", friendshipsController.create)
+friendshipsRouter.delete("/", friendshipsController.delete)
+friendshipsRouter.get("/allPosts/:id", friendshipsController.getAllposts)

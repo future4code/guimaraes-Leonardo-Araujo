@@ -7,7 +7,7 @@ export class UserDatabase extends BaseDatabase {
   async create(input:UserInputDTO): Promise<void> {
     await UserDatabase.connection
       .insert(input)
-      .into(UserDatabase.TABLE_NAME);
+       .into(UserDatabase.TABLE_NAME);
   }
   
 }

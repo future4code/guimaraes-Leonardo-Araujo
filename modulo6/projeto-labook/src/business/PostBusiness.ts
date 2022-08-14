@@ -1,16 +1,17 @@
 
-import { type } from 'os'
-import { v4 as generateId } from 'uuid'
+
 import { PostDatabase } from '../data/PostDataBase'
-import { InvalidRequest } from '../error/InvalidRequest'
+import { InvalidRequestPost } from '../error/InvalidRequest'
+
+
 import { InvalidType } from '../error/InvalidType'
-import { PostInputDTO } from '../model/PostinputDTO'
+import { PostInputDTO } from '../model/PostInputDTO'
 
 export class PostBusiness {
   async create(input :PostInputDTO ):Promise<void> {
     try{
       if (!input.photo || !input.description || !input.type||!input.authorId) {
-        throw new InvalidRequest()
+        throw new InvalidRequestPost
       }
       if(input.type!=="normal"&&input.type!=="event"){
         throw new InvalidType
@@ -20,7 +21,7 @@ export class PostBusiness {
       const postDatabase = new PostDatabase()
       await postDatabase.create(input)
     }catch(error:any){
-        return error.sqlMessage || error.message
+      throw new Error(error.message || error.sqlMessage)
     }
   }
 
@@ -34,7 +35,7 @@ export class PostBusiness {
      return result
       
     }catch(error:any){
-        return error.sqlMessage || error.message
+      throw new Error(error.message || error.sqlMessage)
     }
   }
 }

@@ -1,7 +1,7 @@
 import { CustomError } from "./CustomError";
 
-export class InvalidRequest extends CustomError{
+export class InvalidRequestPost extends CustomError{
     constructor(){
-        super(406,'"name", "email" and "password" must be provided')
+        super(406,'"description", "type" and "authorId" must be provided')
     }
 } 

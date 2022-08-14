@@ -15,8 +15,8 @@ POST  http://localhost:3003/post/create
 Content-Type: application/json
 
 {
-    "photo": "vsksnbsndbkonbokbn",
-    "description":"teste",
+    "photo": "nbsndbkonbn",
+    "description":"teste03",
     "type":"normal",
     "authorId":"2a2c4827-f0d8-4138-8e92-4375577f4e12"
 }
@@ -32,4 +32,17 @@ Content-Type: application/json
     
 }
 
+###
+DELETE   http://localhost:3003/friendships
+Content-Type: application/json
+
+{
+    "userId": "022acb42-0c91-440a-a3be-44a0c87845b8",
+    "friendId":"2a2c4827-f0d8-4138-8e92-4375577f4e12"
+    
+}
+
+
+###
+GET  http://localhost:3003/friendships/allPosts/2a2c4827-f0d8-4138-8e92-4375577f4e12
 
