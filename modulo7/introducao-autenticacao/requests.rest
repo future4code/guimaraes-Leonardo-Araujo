@@ -1,0 +1,27 @@
+
+POST http://localhost:3306/user/signup
+Content-Type: application/json
+
+{
+   "email": "leonardo@bol.com" ,
+   "password": "ihater"
+}
+
+
+###
+
+POST http://localhost:3306/user/login
+Content-Type: application/json
+
+{
+
+   "email": "leonardo@bol.com" ,
+   "password": "dfbhdgd5"
+}
+
+###
+
+GET http://localhost:3306/user/profile
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjNiOTFhOTM2LTU5MzQtNGI5Ni05MmZjLTMwNjczMmEzMDIwNSIsImlhdCI6MTY2MDY5NTU0NywiZXhwIjoxNjYwNjk5MTQ3fQ.gmD0KppmKXYB3tYhEm36yFblfL9FvvZypwMriftiFT8
+
+
