@@ -1,0 +1,25 @@
+POST  http://localhost:3003/user/create
+Content-Type: application/json
+
+{
+    "name": "Ana Oliveira",
+    "email": "ana@gmail.com",
+    "password": "16515dasv"
+}
+
+###
+GET  http://localhost:3003/user/all
+
+###
+POST  http://localhost:3003/movie/create
+Content-Type: application/json
+
+{
+    "title": "JURASSIC WORLD: ",
+    "description": "Quatro anos após a destruição da Ilha Nublar, os dinossauros agora vivem e caçam ao lado de humanos em todo o mundo. Esse frágil equilíbrio remodela o futuro e deve determinar de uma vez por todas se os seres humanos continuarão sendo a espécie dominante em um planeta que agora compartilham com as criaturas mais temíveis da história.",
+    "durationInMinutes": 1.45,
+    "yearOfReleased": 2022
+
+}
+###
+GET  http://localhost:3003/movie/all
