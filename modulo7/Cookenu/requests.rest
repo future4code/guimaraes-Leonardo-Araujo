@@ -2,11 +2,10 @@ POST http://localhost:3306/user/signup
 Content-Type: application/json
 
 {
-   "email": "le@ig.com" ,
-   "password": "ihater",
-   "role":"admin"
+	"name": "Alice",
+	"email": "alice@lbn.com",
+	"password": "123456"
 }
-
 
 ###
 
@@ -14,13 +13,9 @@ POST http://localhost:3306/user/login
 Content-Type: application/json
 
 {
-   "email": "leonard@bol.com" ,
-   "password": "ihater"
+   "email": "alice@lbn.com",
+	"password": "123456"
 }
 
 
-###
-
-GET http://localhost:3306/user/profile
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImIxYjFjZDEzLTljMzctNDI4Ni1iZWQ0LTRiYzcyZmU4ZGJlOSIsImlhdCI6MTY2MDg2MjY3OCwiZXhwIjoxNjYwODY2Mjc4fQ.7gLGrSn85p9WcDwIBn0kyAJaVrpd9AGzRvPsXNCBgaM
 
