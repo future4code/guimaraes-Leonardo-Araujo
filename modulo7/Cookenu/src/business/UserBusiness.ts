@@ -54,7 +54,7 @@ export class UserBusiness {
         password:hashpass,
         role
       };
-      console.log(user.role)
+     
       const userDatabase = new UserDatabase();
       await userDatabase.createUser(user);
 
