@@ -1,7 +1,8 @@
 export type recipe={
     id:string,
     title:string,
-    description:string
+    description:string,
+    cratedAt: Date
 }
 export interface RecipeInputDTO{
     title:string,

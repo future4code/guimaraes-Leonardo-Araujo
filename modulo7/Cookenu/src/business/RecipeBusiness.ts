@@ -1,5 +1,6 @@
 import { RecipesDatabase } from "../data/RecipeDataBase";
-import { CustomError, Unauthorized } from "../error/customError";
+
+import { CustomError, InvalidId, Unauthorized } from "../error/customError";
 import { recipe, RecipeInputDTO } from "../model/Recipes";
 import { Authenticator } from "../services/Authenticator";
 import { HashManager } from "../services/HashManager";
@@ -49,4 +50,21 @@ export class RecipeBusiness{
 
 
     }
+    public getRecipesById = async (token:string,id:string) :Promise<recipe>=>{
+        try {
+          if(!token){
+            throw new Unauthorized()
+          }
+          if(!id|| id===":id"){
+            throw new InvalidId()
+          }
+          
+         
+          const recipeDatabase= new RecipesDatabase()
+          const result : recipe= await recipeDatabase.getRecipesById(token,id) 
+          return result 
+        } catch (error: any) {
+          throw new Error(error.message);
+        }
+      }
 }

@@ -7,3 +7,4 @@ export const RecipesRouter = express.Router()
 const recipescontroller=new RecipesController()
 
 RecipesRouter.post("/",recipescontroller.create)
+RecipesRouter.get("/:id",recipescontroller.getRecipesById)
