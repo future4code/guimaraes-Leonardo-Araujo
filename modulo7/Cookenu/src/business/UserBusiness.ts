@@ -2,6 +2,7 @@ import { UserDatabase } from "../data/UserDatabase";
 import {
   CustomError,
   InvalidEmail,
+  InvalidId,
   InvalidName,
   InvalidPassword,
   Unauthorized,
@@ -120,6 +121,23 @@ export class UserBusiness {
      
       const userDatabase= new UserDatabase()
       const result:ProfileOutputDTO= await userDatabase.getProfile(token)
+      return result
+    } catch (error: any) {
+      throw new Error(error.message);
+    }
+  }
+  public getProfileById = async (token:string,id:string) :Promise<ProfileOutputDTO>=>{
+    try {
+      if(!token){
+        throw new Unauthorized()
+      }
+      if(!id|| id===":id"){
+        throw new InvalidId()
+      }
+      
+     
+      const userDatabase= new UserDatabase()
+      const result:ProfileOutputDTO= await userDatabase.getProfileById(token,id)
       return result
     } catch (error: any) {
       throw new Error(error.message);

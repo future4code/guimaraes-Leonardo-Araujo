@@ -9,6 +9,11 @@ export class InvalidName extends CustomError{
         super(400, "Nome inválido")
     }
 }
+export class InvalidId extends CustomError{ 
+    constructor(){
+        super(400, "ID inválido")
+    }
+}
 
 export class InvalidEmail extends CustomError{ 
     constructor(){

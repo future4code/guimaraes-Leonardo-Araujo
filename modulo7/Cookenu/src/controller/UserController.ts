@@ -73,7 +73,21 @@ public getProfile = async (req: Request, res: Response) =>{
     res.status(400).send(error.message);
   }
 }
+public getProfileById = async (req: Request, res: Response) =>{
+  try {
+    const token =req.headers.authorization as string
+    const {id}=req.params
 
+ 
+   
+    const userBusiness = new UserBusiness()
+    const result = await userBusiness.getProfileById(token, id);
+
+    res.status(200).send(result);
+  } catch (error: any) {
+    res.status(400).send(error.message);
+  }
+}
 
 
 }
