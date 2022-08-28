@@ -1,7 +1,7 @@
 import { RecipesDatabase } from "../data/RecipeDataBase";
 
 import { CustomError, InvalidId, Unauthorized } from "../error/customError";
-import { recipe, RecipeInputDTO } from "../model/Recipes";
+import { Recipe, recipe, RecipeInputDTO } from "../model/Recipes";
 import { Authenticator } from "../services/Authenticator";
 import { HashManager } from "../services/HashManager";
 import { IdGenerator } from "../services/IdGenerator";
@@ -33,10 +33,11 @@ export class RecipeBusiness{
             const id: string = idGenerator.generateId();
       
        
-            const recipe: recipe = {
+            const recipe: Recipe = {
               id, 
               title,
-              description
+              description,
+              cratedAt:undefined
             };
            
              const recipeDatabase = new RecipesDatabase();

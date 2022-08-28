@@ -38,7 +38,7 @@ export class RecipesDatabase extends BaseDatabase {
 
 
             const result = await RecipesDatabase.connection.raw(`SELECT id,title,description, DATE_FORMAT(cratedAt,'%d/%m/%Y') AS cratedAt FROM cookenu_recipe where id = "${id}"`)
-            console.log(result)
+           
             if (!result[0]) {
                 throw new InvalidId()
             }
