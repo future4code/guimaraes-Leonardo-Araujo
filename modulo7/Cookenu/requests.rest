@@ -2,8 +2,8 @@ POST http://localhost:3306/user/signup
 Content-Type: application/json
 
 {
-	"name": "Alice",
-	"email": "alice@lbn.com",
+	"name": "Ana",
+	"email": "ana@lbn.com",
 	"password": "123456"
 }
 
@@ -20,4 +20,23 @@ Content-Type: application/json
 
 ###
 GET  http://localhost:3306/user/profile
+Content-Type: application/json
+authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwMzAzODYzLWNhMTEtNDViMi05YTdjLWVlOTlmNjU0N2IzYyIsInJvbGUiOiJub3JtYWwiLCJpYXQiOjE2NjE3MDM4NTAsImV4cCI6MTY2MTcwNzQ1MH0.4EDDpk5SusZLir9r36hzjKjfV49I7lwEi8SnGCqRw6g
 
+
+###
+GET  http://localhost:3306/user/8a39154f-4b2f-417f-b1ef-f637961c4a16
+Content-Type: application/json
+authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwMzAzODYzLWNhMTEtNDViMi05YTdjLWVlOTlmNjU0N2IzYyIsInJvbGUiOiJub3JtYWwiLCJpYXQiOjE2NjE3MDM4NTAsImV4cCI6MTY2MTcwNzQ1MH0.4EDDpk5SusZLir9r36hzjKjfV49I7lwEi8SnGCqRw6g
+
+
+
+###
+POST http://localhost:3306/recipe/
+Content-Type: application/json
+authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwMzAzODYzLWNhMTEtNDViMi05YTdjLWVlOTlmNjU0N2IzYyIsInJvbGUiOiJub3JtYWwiLCJpYXQiOjE2NjE3MDM4NTAsImV4cCI6MTY2MTcwNzQ1MH0.4EDDpk5SusZLir9r36hzjKjfV49I7lwEi8SnGCqRw6g
+
+{
+   "title": "Brigadeiro de panela",
+	"description": "Quem não ama um brigadeiro em festa infantil ou em qualquer oportunidade de um docinho? O brigadeiro é um doce clássico da cozinha brasileira, que pode ser preparado tanto na panela como no micro-ondas."
+}
