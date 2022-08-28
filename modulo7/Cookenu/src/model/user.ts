@@ -13,6 +13,11 @@ export interface UserInputDTO {
    password: string,
    role :string
 }
+export interface ProfileOutputDTO{
+   id: string,
+   name:string,
+   email:string
+}
 
 export interface EditUserInputDTO {
    name: string,

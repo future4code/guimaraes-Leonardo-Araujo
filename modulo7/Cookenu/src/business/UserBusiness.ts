@@ -4,6 +4,7 @@ import {
   InvalidEmail,
   InvalidName,
   InvalidPassword,
+  Unauthorized,
   UserNotFound,
 } from "../error/customError";
 import {
@@ -11,6 +12,7 @@ import {
   user,
   EditUserInputDTO,
   EditUserInput,
+  ProfileOutputDTO,
 } from "../model/user";
 import { Authenticator } from "../services/Authenticator";
 import { HashManager } from "../services/HashManager";
@@ -109,4 +111,18 @@ export class UserBusiness {
       throw new CustomError(400, error.message);
     }
   };
+  public getProfile = async (token:string) :Promise<ProfileOutputDTO>=>{
+    try {
+      if(!token){
+        throw new Unauthorized()
+      }
+       
+     
+      const userDatabase= new UserDatabase()
+      const result:ProfileOutputDTO= await userDatabase.getProfile(token)
+      return result
+    } catch (error: any) {
+      throw new Error(error.message);
+    }
+  }
 }

@@ -1,5 +1,6 @@
 import { Request, Response } from "express";
 import { UserBusiness } from "../business/UserBusiness";
+import { Unauthorized } from "../error/customError";
 import { LoginInputDTO, UserInputDTO } from "../model/user";
 import { Authenticator } from "../services/Authenticator";
 
@@ -59,7 +60,19 @@ export class UserController {
       res.status(400).send(error.message);
     }
   };
+public getProfile = async (req: Request, res: Response) =>{
+  try {
+    const token =req.headers.authorization as string
 
+   
+    const userBusiness = new UserBusiness()
+    const result = await userBusiness.getProfile(token);
+
+    res.status(200).send(result);
+  } catch (error: any) {
+    res.status(400).send(error.message);
+  }
+}
 
 
 
