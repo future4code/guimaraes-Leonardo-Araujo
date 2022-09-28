@@ -1,0 +1,9 @@
+POST  http://localhost:3003/populate
+Content-Type: application/json
+
+{
+    "name": "Ana Oliveira",
+    "email": "ana@gmail.com",
+    "password": "16515dasv",
+    "role":"normal"
+}
