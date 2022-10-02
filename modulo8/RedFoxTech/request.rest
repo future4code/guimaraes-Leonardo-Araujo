@@ -7,3 +7,48 @@ Content-Type: application/json
     "password": "16515dasv",
     "role":"normal"
 }
+
+
+
+###
+POST  http://localhost:3003/user/signup
+Content-Type: application/json
+
+{
+    "name": "Leonardo",
+    "email": "leo@gmail.com",
+    "password": "123456",
+    "role":"admin"
+}
+
+
+###
+POST  http://localhost:3003/user/login
+Content-Type: application/json
+
+{
+    
+    "email": "leo@gmail.com",
+    "password": "123456"
+    
+}
+
+
+
+
+###
+POST  http://localhost:3003/user//fillDatabase
+Content-Type: application/json
+authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQxNDQ1NzJhLTBmM2UtNDg3Ni1iNzhhLWQzOWFlODdiY2RkNyIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY2NDc0Mjk0OSwiZXhwIjoxNjY0NzQzNTQ5fQ.01jRIk-P0G74DVw9ggelqSGKhp4uDNvIDm8361iZ7QE
+
+
+
+
+###
+GET  http://localhost:3003/pokemon/5
+Content-Type: application/json
+authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQxNDQ1NzJhLTBmM2UtNDg3Ni1iNzhhLWQzOWFlODdiY2RkNyIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY2NDc0NzE3OCwiZXhwIjoxNjY0NzQ3Nzc4fQ.PN4FlYg4mu8h9O687EugggdSHuUSUdmHEIRKm8qybhU
+
+
+
+

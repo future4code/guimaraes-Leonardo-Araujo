@@ -1,0 +1,68 @@
+export class Pokemon{
+
+    constructor(
+       
+        name :string,
+        Pokedex_number :string,
+        Img_name :string ,
+        Generation:string,
+        Evolution_stage  :string,
+        Evolved  :string,
+        Family_id :string,
+        Cross_gen :string, 
+        Type_1:string,
+        Type_2 :string,
+        Weather_1 :string,
+        Weather_2 :string,
+        STAT_TOTAL :string,
+        ATK  :string,
+        DEF  :string,
+        STA :string,
+        Legendary :string,
+        Aquireable :string,
+        Spawns  :string,
+        Regional :string,
+        Raidable :string,
+        Hatchable  :string,
+        Shiny   :string,
+        Nest   :string,
+        New   :string,
+        Not_Gettable :string,
+        Future_Evolve :string,
+        CP_40 :string,
+       CP_39 :string
+        ){}
+   
+};
+
+export interface PokemonInputDTO{
+    name :string,
+        Pokedex_number :string,
+        Img_name :string ,
+        Generation:string,
+        Evolution_stage  :string,
+        Evolved  :string,
+        Family_id :string,
+        Cross_gen :string, 
+        Type_1:string,
+        Type_2 :string,
+        Weather_1 :string,
+        Weather_2 :string,
+        STAT_TOTAL :string,
+        ATK  :string,
+        DEF  :string,
+        STA :string,
+        Legendary :string,
+        Aquireable :string,
+        Spawns  :string,
+        Regional :string,
+        Raidable :string,
+        Hatchable  :string,
+        Shiny   :string,
+        Nest   :string,
+        New   :string,
+        Not_Gettable :string,
+        Future_Evolve :string,
+        CP_40 :string,
+       CP_39 :string
+}

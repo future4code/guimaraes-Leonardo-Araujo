@@ -18,3 +18,18 @@ export abstract class BaseError extends Error {
       super( `"ID User: inform  "email"and "password" `,400)
   }
   }
+  export class InvalidData extends BaseError{
+    constructor(){
+      super( `"invalid data" `,400)
+  }
+  }
+  export class Unauthorized extends BaseError{
+    constructor(){
+      super( `"unauthorized user : `,401)
+  }
+  }
+  export class InvalidId extends BaseError{
+    constructor(){
+      super( `"invalid ID" `,400)
+  }
+  }
