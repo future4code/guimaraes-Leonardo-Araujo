@@ -45,10 +45,19 @@ authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQxNDQ1NzJhLTBmM2UtN
 
 
 ###
-GET  http://localhost:3003/pokemon/5
+GET  http://localhost:3003/pokemon/9
 Content-Type: application/json
-authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQxNDQ1NzJhLTBmM2UtNDg3Ni1iNzhhLWQzOWFlODdiY2RkNyIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY2NDc0NzE3OCwiZXhwIjoxNjY0NzQ3Nzc4fQ.PN4FlYg4mu8h9O687EugggdSHuUSUdmHEIRKm8qybhU
+authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQxNDQ1NzJhLTBmM2UtNDg3Ni1iNzhhLWQzOWFlODdiY2RkNyIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY2NDc1MDU5MiwiZXhwIjoxNjY0NzUxMTkyfQ.a3ukSqfEKIbnGfQ4NOF-iPrPC3_4pY-PgWrAnbyaqBA
 
 
 
 
+###
+GET  http://localhost:3003/pokemon/pokeName/misdreavus
+Content-Type: application/json
+authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQxNDQ1NzJhLTBmM2UtNDg3Ni1iNzhhLWQzOWFlODdiY2RkNyIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY2NDc0ODMwMSwiZXhwIjoxNjY0NzQ4OTAxfQ.4xgkE6PrXMufILyr3F9b6e5M0Ko04sP0IeuIzrU1sQI
+
+###
+GET  http://localhost:3003/pokemon/all?title=&sort=name&order=asc
+Content-Type: application/json
+authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQxNDQ1NzJhLTBmM2UtNDg3Ni1iNzhhLWQzOWFlODdiY2RkNyIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY2NDc1MTk4MiwiZXhwIjoxNjY0NzUyNTgyfQ.Vx8uN-PPUGq84n1h6JhmdhrG8KqhD7BuM-6qciG55Kk

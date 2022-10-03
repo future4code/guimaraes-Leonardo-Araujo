@@ -53,12 +53,12 @@ export class UserDatabase extends BaseDatabase {
 }
 public async getUserById(id: string): Promise<User> {
 
-  console.log(id)
+  
     const result = await this.getConnection()
       .select("*")
       .from(UserDatabase.TABLE_NAME)
       .where({id});
-      console.log(result)
+  
       
     return User.toUserModel(result[0]);
   }
