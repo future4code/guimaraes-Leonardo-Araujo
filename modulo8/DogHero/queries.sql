@@ -1,0 +1,8 @@
+-- Active: 1656453374144@@35.226.146.116@3306@guimaraes-4211333-leonardo-araujo
+CREATE TABLE IF NOT EXISTS lama_bandas (
+  id VARCHAR(255) PRIMARY KEY,
+  name VARCHAR(255) UNIQUE NOT NULL,
+  music_genre VARCHAR(255) NOT NULL,
+  responsible VARCHAR(255) UNIQUE NOT NULL 
+);
+
