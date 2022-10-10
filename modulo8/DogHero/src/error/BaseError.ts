@@ -18,13 +18,29 @@ export abstract class BaseError extends Error {
       super( `"Invalid User: inform  "email"and "password" `,400)
   }
   }
-  export class InvalidBand extends BaseError{
+  export class InvalidPasseio extends BaseError{
     constructor(){
-      super( `"Invalid Band: inform "name", "musicalGenre" and "representative"`,400)
+      super( `"  Passeio Invalido: informe  " data Agendamento"," duração", "latitude", "longitude","pets"and "horade inicio" `,400)
   }
   }
+  export class InvalidDuration extends BaseError{
+    constructor(){
+      super( `"Duração Invalida : informe  " duração" de 30 min ou 60 min" `,400)
+  }
+  }
+  export class InvalidHour extends BaseError{
+    constructor(){
+      super( `"Hora Invalida : informe  "inicio como hora " , ex: "18:23" `,400)
+  }
+  }
+ 
   export class Unauthorized extends BaseError{
     constructor(){
       super( `"unauthorized user : `,401)
+  }
+  }
+  export class InvalidData extends BaseError{
+    constructor(){
+      super( `"Data invalida :  ex: 05/02/1820`,401)
   }
   }
