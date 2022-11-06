@@ -8,4 +8,16 @@ CREATE TABLE IF NOT EXISTS AmoroTeam_user (
   password VARCHAR(255) NOT NULL,
   role VARCHAR(255) NOT NULL DEFAULT "NORMAL"
 );
-
+CREATE TABLE IF NOT EXISTS AmoroTeam_products (
+  id VARCHAR(255) PRIMARY KEY,
+  name VARCHAR(255) NOT NULL 
+  
+);
+CREATE TABLE IF NOT EXISTS AmoroTeam_tags (
+  id VARCHAR(255) PRIMARY KEY,
+  name VARCHAR(255) NOT NULL ,
+  product_id VARCHAR(255) NOT NULL,
+  FOREIGN KEY (product_id) REFERENCES AmoroTeam_products(id)
+   
+  
+);
