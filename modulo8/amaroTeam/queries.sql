@@ -1,0 +1,23 @@
+-- Active: 1656453374144@@35.226.146.116@3306@guimaraes-4211333-leonardo-araujo
+
+
+CREATE TABLE IF NOT EXISTS AmoroTeam_user (
+  id VARCHAR(255) PRIMARY KEY,
+  name VARCHAR(255) NOT NULL,
+  email VARCHAR(255) NOT NULL UNIQUE,
+  password VARCHAR(255) NOT NULL,
+  role VARCHAR(255) NOT NULL DEFAULT "NORMAL"
+);
+CREATE TABLE IF NOT EXISTS AmoroTeam_products (
+  id VARCHAR(255) PRIMARY KEY,
+  name VARCHAR(255) NOT NULL 
+  
+);
+CREATE TABLE IF NOT EXISTS AmoroTeam_tags (
+  id int AUTO_INCREMENT PRIMARY KEY,
+  tag VARCHAR(255) NOT NULL ,
+  product_id VARCHAR(255) NOT NULL,
+  FOREIGN KEY (product_id) REFERENCES AmoroTeam_products(id)
+   
+  
+);
