@@ -1,0 +1,42 @@
+POST  http://localhost:3003/user/signup
+Content-Type: application/json
+
+{
+
+    "name": "Leonardo",
+    "email": "leo@gmail.com",
+    "password": "16515dasv",
+    "role":"admin"
+}
+
+###
+//login
+POST  http://localhost:3003/user/login
+Content-Type: application/json
+
+{
+    "email": "leo@gmail.com",
+    "password": "16515dasv"
+    
+}
+
+
+
+###
+
+POST  http://localhost:3003/user//fillDatabase
+Content-Type: application/json
+authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImExMDA5MjNhLTNjODEtNDIyMS1hNWE0LWQyNTQ4OWUzZWQwYiIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY2Nzk0NDQ5MCwiZXhwIjoxNjY3OTQ4MDkwfQ.g34JAdA05QKAQd8afxB7nEDuNPbVeXS2bEdz2NxG1Sw
+
+
+###
+get  http://localhost:3003/product/productName?name=MANGA&sort=name&order=desc&page=1&size=4
+Content-Type: application/json
+authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImExMDA5MjNhLTNjODEtNDIyMS1hNWE0LWQyNTQ4OWUzZWQwYiIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY2Nzk0ODQzNCwiZXhwIjoxNjY3OTUyMDM0fQ.ixnrDBUmzM05oukCtdkQMjfkd_CH_ZsPVmRtZBZYcV8
+
+
+
+###
+get  http://localhost:3003/product/all?sort=name&order=asc&page=1&size=40
+Content-Type: application/json
+authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImExMDA5MjNhLTNjODEtNDIyMS1hNWE0LWQyNTQ4OWUzZWQwYiIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY2Nzk0ODQzNCwiZXhwIjoxNjY3OTUyMDM0fQ.ixnrDBUmzM05oukCtdkQMjfkd_CH_ZsPVmRtZBZYcV8
