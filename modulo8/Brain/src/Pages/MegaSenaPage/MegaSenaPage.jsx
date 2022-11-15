@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { BASE_URL } from "../../constants/url";
 import useRequestData from "../../hooks/useRequestData";
+import logo from "../../assets/trevo.png"
 import {
   Circle,
   NumberConteiner,
@@ -66,6 +67,7 @@ const MegaSenaPage=(props)=>{
     });
 
   const renderOptions = games.map((e) => {
+    
     return (
       <option key={e.id} value={e.nome}>
         {e.nome.toUpperCase()}
@@ -78,14 +80,18 @@ const MegaSenaPage=(props)=>{
       <LeftCol></LeftCol>
       <Conteiner>
         <TitleWrap>
-         
+        <Select onChange={onChangeSelect}>{renderOptions}</Select>
+        <div>
+          <img src={logo}/>
           <Title>{lotery && lotery.nome.toUpperCase()}</Title>
+            
+        </div>
         </TitleWrap>
 
         <ConteinerInfo>
           <MainContainer>
             {" "}
-            <Select onChange={onChangeSelect}>{renderOptions}</Select>
+            
             <RightCol>
               <NumberConteiner>{renderNumbers}</NumberConteiner>
             </RightCol>

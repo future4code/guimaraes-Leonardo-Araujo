@@ -36,7 +36,7 @@ export const LeftCol = styled.div`
   z-index: 0;
   transform: skewX(10deg);
   transform-origin: right bottom;
-  position: relative;
+ 
   @media screen and (max-width: 900px) {
     flex: 0.5;
     top: 0;
@@ -58,6 +58,7 @@ export const Conteiner = styled.div`
   position: absolute;
   display: flex;
   justify-content: flex-start;
+  
   align-items: center;
   @media screen and (min-device-width: 320px) and (max-device-width: 480px) {
     display: grid;
@@ -67,12 +68,21 @@ export const Conteiner = styled.div`
   }
 `;
 export const TitleWrap = styled.div`
-  position: absolute;
+ 
+ 
   display: flex;
-  justify-content: center;
+  flex-direction:column ;
+  justify-content: space-around;
+
+  height:100vh ;
   align-items: center;
-  z-index: 2;
-  top: 50%;
+  
+  div{
+    display: flex;
+    justify-content:center ;
+    align-items:center ;
+    flex-wrap:nowrap ;
+  }
   @media screen and (max-width: 900px) {
     flex-direction: column;
     top: unset;
@@ -93,9 +103,10 @@ export const LogoLoterias = styled.img`
 `;
 export const Title = styled.p`
   color: white;
-  font-size: 1.7rem;
+  
   font-weight: 600;
   padding: 0 0.8em;
+  font-size: 25pt ;
   @media screen and (max-width: 900px) {
     padding: 0;
     line-height: 0;
@@ -103,11 +114,12 @@ export const Title = styled.p`
 `;
 export const ConteinerInfo = styled.div`
   display: flex;
-  position: absolute;
-  width: 60.5vw;
+  
+  
+  width: 55.5vw;
   height: 100vh;
-  transform: translateX(65%);
-  justify-content: space-around;
+  transform: translateX(25%);
+  justify-content: center;
   align-items: center;
 `;
 
@@ -117,6 +129,7 @@ export const MainContainer = styled.div`
   width: 100vw;
   justify-content: space-between;
   margin-top: 25vh;
+ 
 `;
 
 export const Select = styled.select`
@@ -148,6 +161,8 @@ export const RightCol = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap ;
+  
   @media screen and (max-width: 900px) {
     flex: 0.6;
     margin-right: 1.5em;
@@ -158,10 +173,15 @@ export const RightCol = styled.div`
 
 export const NumberConteiner = styled.div`
   display: flex;
+  flex-wrap: wrap;
+  
+  width:980px ;
+  justify-content: center ;
+  align-items:center ;
   ul {
     list-style: none;
     display: flex;
-    flex-wrap: wrap;
+    
     justify-content: center;
     align-items: center;
     margin-right: 20px;
@@ -169,14 +189,14 @@ export const NumberConteiner = styled.div`
   }
 `;
 export const Circle = styled.div`
-  width: 50px;
-  height: 50px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
   margin: black solid;
   background-color: #e2e2e5;
   margin-left: 5px;
   margin-right: auto;
-  margin-bottom: auto;
+  margin-bottom: 10px;
   font-weight: bolder;
   font-size: 15px;
   padding: 1rem;
